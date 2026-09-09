@@ -301,28 +301,13 @@
     animation:picReveal 9s ease-in-out infinite;
   }
   .pic .pic-alt.pic-alt-slow{animation-duration:10s;animation-delay:2.5s;}
-  .pic .pic-alt-tag{
-    position:absolute;left:14px;bottom:14px;z-index:2;
-    display:inline-flex;align-items:center;gap:6px;
-    background:color-mix(in srgb, var(--plum-strong) 82%, transparent);
-    color:#FBF5EA;font-size:0.72rem;font-weight:600;letter-spacing:0.04em;
-    padding:6px 12px;border-radius:100px;
-    opacity:0;
-    animation:picTagReveal 9s ease-in-out infinite;
-  }
-  .pic .pic-alt-tag.pic-alt-slow{animation-duration:10s;animation-delay:2.5s;}
   @keyframes picReveal{
     0%, 42%{opacity:0;transform:scale(1.03);}
     55%, 85%{opacity:1;transform:scale(1);}
     100%{opacity:0;transform:scale(1.03);}
   }
-  @keyframes picTagReveal{
-    0%, 45%{opacity:0;transform:translateY(6px);}
-    58%, 82%{opacity:1;transform:translateY(0);}
-    100%{opacity:0;transform:translateY(6px);}
-  }
   @media (prefers-reduced-motion: reduce){
-    .pic .pic-alt, .pic .pic-alt-tag{animation:none;opacity:0;}
+    .pic .pic-alt{animation:none;opacity:0;}
   }
 
   /* ---------- Quienes somos ---------- */
@@ -502,7 +487,6 @@
           <div class="pic">
             <img class="pic-base" src="img/maqui.jpg" alt="Racimo de bayas de maqui silvestre, fruto morado oscuro del sur de Chile">
             <img class="pic-alt" src="img/maqui-producto.jpg" alt="Maqui deshidratado ya envasado, listo para consumir">
-            <span class="pic-alt-tag">Así se entrega</span>
           </div>
           <h3>Maqui deshidratado</h3>
           <p class="desc">Fruto silvestre del sur de Chile, reconocido por su altísimo contenido de antioxidantes (antocianinas). Usado tradicionalmente por pueblos originarios como aporte al bienestar general.</p>
@@ -520,7 +504,6 @@
           <div class="pic">
             <img class="pic-base" src="img/polen.jpg" alt="Gránulos de polen de abeja de distintos colores, producto natural rico en nutrientes">
             <img class="pic-alt pic-alt-slow" src="img/polen-producto.jpg" alt="Polen de abeja ya envasado en frasco, listo para consumir">
-            <span class="pic-alt-tag pic-alt-slow">Así se entrega</span>
           </div>
           <h3>Polen de abeja</h3>
           <p class="desc">Producto natural rico en aminoácidos y nutrientes, tradicionalmente usado como energizante natural.</p>
