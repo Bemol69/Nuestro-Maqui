@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nuestro Maqui — Hierbas medicinales del sur de Chile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FBF5EA;
+    --bg-alt: #F2E9D7;
+    --surface: #FFFDF8;
+    --ink: #2A1C29;
+    --ink-soft: #5F4F5B;
+    --ink-faint: #8A7A85;
+    --plum: #4A2145;
+    --plum-strong: #341530;
+    --plum-tint: #F1E4EE;
+    --green: #4C6C3B;
+    --green-tint: #EAF0E1;
+    --gold: #B87F1E;
+    --gold-tint: #F6EAD2;
+    --border: rgba(74,33,69,0.22);
+    --border-soft: rgba(74,33,69,0.12);
+    --footer-bg: #341530;
+    --footer-ink: #F1E4EE;
+    --footer-ink-soft: rgba(241,228,238,0.62);
+    --shadow: 0 18px 40px -22px rgba(52,21,48,0.35);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #201526;
+      --bg-alt: #2A1B2E;
+      --surface: #2E1E32;
+      --ink: #F3EAEE;
+      --ink-soft: #CBB9C6;
+      --ink-faint: #9C89A0;
+      --plum: #D7A6D0;
+      --plum-strong: #F3EAEE;
+      --plum-tint: #3A2440;
+      --green: #A7C98D;
+      --green-tint: #2A3324;
+      --gold: #E7B85B;
+      --gold-tint: #3A2E1B;
+      --border: rgba(243,234,238,0.18);
+      --border-soft: rgba(243,234,238,0.1);
+      --shadow: 0 18px 40px -20px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #201526;
+    --bg-alt: #2A1B2E;
+    --surface: #2E1E32;
+    --ink: #F3EAEE;
+    --ink-soft: #CBB9C6;
+    --ink-faint: #9C89A0;
+    --plum: #D7A6D0;
+    --plum-strong: #F3EAEE;
+    --plum-tint: #3A2440;
+    --green: #A7C98D;
+    --green-tint: #2A3324;
+    --gold: #E7B85B;
+    --gold-tint: #3A2E1B;
+    --border: rgba(243,234,238,0.18);
+    --border-soft: rgba(243,234,238,0.1);
+    --shadow: 0 18px 40px -20px rgba(0,0,0,0.55);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Work Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:"Fraunces", Georgia, "Times New Roman", serif;
+    font-weight:600;
+    color:var(--plum-strong);
+    margin:0;
+    text-wrap:balance;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .eyebrow{
+    font-size:0.78rem;
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--green);
+  }
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  section{position:relative;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:40;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border-soft);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:10px 24px;
+    max-width:1120px;
+    margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .brand img{height:44px;width:auto;}
+  .brand-word{
+    font-family:"Fraunces", serif;
+    font-weight:600;
+    font-size:1.05rem;
+    color:var(--plum-strong);
+    line-height:1.1;
+  }
+  .brand-word em{color:var(--green);font-style:italic;font-weight:500;display:block;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;}
+  .nav-links{
+    display:none;
+    align-items:center;
+    gap:28px;
+    list-style:none;
+    margin:0;padding:0;
+  }
+  .nav-links a{
+    text-decoration:none;
+    font-size:0.92rem;
+    font-weight:500;
+    color:var(--ink-soft);
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .nav-links a:hover{color:var(--plum);border-color:var(--gold);}
+  .nav-right{display:flex;align-items:center;gap:10px;}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:"Work Sans", sans-serif;
+    font-weight:600;
+    font-size:0.92rem;
+    padding:11px 20px;
+    border-radius:100px;
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--plum);color:#FBF5EA;box-shadow:var(--shadow);}
+  .btn-primary:hover{background:var(--plum-strong);}
+  :root[data-theme="dark"] .btn-primary, @media (prefers-color-scheme: dark){.btn-primary{color:#241726;}}
+  .btn-ghost{background:transparent;border-color:var(--border);color:var(--plum-strong);}
+  .btn-ghost:hover{background:var(--plum-tint);}
+  .btn-sm{padding:9px 16px;font-size:0.84rem;}
+  .btn-nav{display:none;}
+  .menu-toggle{
+    display:inline-flex;
+    background:none;border:1px solid var(--border);border-radius:10px;
+    padding:8px;color:var(--plum-strong);cursor:pointer;
+  }
+  .icon{width:20px;height:20px;flex:none;}
+
+  .mobile-panel{
+    display:none;
+    flex-direction:column;
+    gap:2px;
+    padding:8px 24px 18px;
+    border-top:1px solid var(--border-soft);
+  }
+  .mobile-panel.open{display:flex;}
+  .mobile-panel a{
+    text-decoration:none;color:var(--ink-soft);font-weight:500;
+    padding:12px 4px;border-bottom:1px solid var(--border-soft);
+  }
+
+  @media (min-width:900px){
+    .nav-links{display:flex;}
+    .btn-nav{display:inline-flex;}
+    .menu-toggle{display:none;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    overflow:hidden;
+    background:var(--bg);
+  }
+  .hero-blobs{
+    position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(480px 380px at 82% -6%, color-mix(in srgb, var(--green) 30%, transparent), transparent 70%),
+      radial-gradient(520px 420px at -8% 30%, color-mix(in srgb, var(--plum) 24%, transparent), transparent 70%),
+      radial-gradient(360px 300px at 60% 92%, color-mix(in srgb, var(--gold) 22%, transparent), transparent 70%);
+    filter:blur(6px);
+  }
+  .hero-inner{
+    position:relative;z-index:1;
+    display:grid;
+    gap:40px;
+    padding:56px 0 72px;
+    align-items:center;
+  }
+  .hero-logo{
+    justify-self:center;
+    width:min(280px, 62vw);
+  }
+  .hero-copy{text-align:center;}
+  .hero-copy .eyebrow{display:block;margin-bottom:14px;}
+  .hero-copy h1{
+    font-size:clamp(2.1rem, 5.4vw, 3.1rem);
+    font-style:italic;
+    font-weight:500;
+    letter-spacing:0.01em;
+  }
+  .hero-copy .tag{
+    margin-top:16px;
+    font-size:1.05rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin-left:auto;margin-right:auto;
+  }
+  .hero-cta{
+    margin-top:30px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    justify-content:center;
+  }
+  .hero-scroll{
+    margin-top:46px;
+    text-align:center;
+    font-size:0.82rem;
+    color:var(--ink-faint);
+    letter-spacing:0.06em;
+  }
+  @media (min-width:900px){
+    .hero-inner{grid-template-columns:0.9fr 1.1fr;padding:76px 0 96px;text-align:left;}
+    .hero-logo{justify-self:start;width:100%;max-width:360px;}
+    .hero-copy{text-align:left;}
+    .hero-copy .tag{margin-left:0;}
+    .hero-cta{justify-content:flex-start;}
+    .hero-scroll{text-align:left;}
+  }
+
+  .wave{display:block;width:100%;height:56px;margin-top:-2px;}
+
+  /* ---------- Placeholder frame ---------- */
+  .ph{
+    position:relative;
+    border-radius:26px 8px 26px 8px;
+    border:1.5px dashed var(--border);
+    background:
+      radial-gradient(120px 90px at 30% 20%, color-mix(in srgb, var(--green) 16%, transparent), transparent 70%),
+      radial-gradient(140px 100px at 75% 80%, color-mix(in srgb, var(--plum) 14%, transparent), transparent 70%),
+      var(--surface);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    text-align:center;
+    padding:28px 18px;
+    min-height:200px;
+  }
+  .ph svg{width:40px;height:40px;color:var(--plum);opacity:0.7;}
+  .ph .ph-label{font-size:0.82rem;color:var(--ink-faint);font-style:italic;}
+
+  /* ---------- Quienes somos ---------- */
+  .somos{padding:76px 0;}
+  .somos-grid{display:grid;gap:36px;align-items:center;}
+  .somos-text .eyebrow{margin-bottom:12px;}
+  .somos-text h2{font-size:clamp(1.6rem,3.4vw,2.2rem);margin-bottom:18px;}
+  .somos-text p{color:var(--ink-soft);max-width:56ch;}
+  .somos-text p + p{margin-top:14px;}
+  @media (min-width:900px){
+    .somos-grid{grid-template-columns:1fr 0.85fr;}
+    .somos-grid.reverse{grid-template-columns:0.85fr 1fr;}
+    .somos-grid.reverse .ph{order:-1;}
+  }
+
+  /* ---------- Section header ---------- */
+  .sec-head{max-width:640px;margin:0 0 44px;}
+  .sec-head h2{font-size:clamp(1.7rem,3.6vw,2.35rem);margin-top:12px;}
+  .sec-head p{margin-top:14px;color:var(--ink-soft);}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+
+  /* ---------- Products ---------- */
+  .productos{padding:80px 0;background:var(--bg-alt);}
+  .prod-grid{display:grid;gap:26px;grid-template-columns:1fr;}
+  @media (min-width:760px){.prod-grid{grid-template-columns:repeat(3,1fr);}}
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border-soft);
+    border-radius:22px 22px 22px 4px;
+    padding:22px;
+    display:flex;flex-direction:column;gap:16px;
+    box-shadow:var(--shadow);
+  }
+  .card .ph{min-height:150px;}
+  .card h3{font-size:1.28rem;font-weight:600;}
+  .card p.desc{color:var(--ink-soft);font-size:0.94rem;flex:1;}
+  .card .btn{align-self:flex-start;}
+
+  .disclaimer{
+    margin-top:40px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    background:var(--gold-tint);
+    border:1px solid color-mix(in srgb, var(--gold) 35%, transparent);
+    border-radius:14px;
+    padding:18px 20px;
+  }
+  .disclaimer svg{width:20px;height:20px;flex:none;color:var(--gold);margin-top:2px;}
+  .disclaimer p{font-size:0.86rem;color:var(--ink-soft);font-style:italic;}
+
+  /* ---------- Podologia ---------- */
+  .podo{padding:64px 0;background:var(--green-tint);}
+  .podo-inner{
+    display:grid;gap:24px;
+    align-items:center;
+    background:var(--surface);
+    border:1px solid var(--border-soft);
+    border-radius:22px;
+    padding:34px;
+  }
+  .podo-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:0.76rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--green);background:var(--green-tint);
+    padding:6px 12px;border-radius:100px;margin-bottom:14px;
+  }
+  .podo h2{font-size:1.5rem;}
+  .podo p{color:var(--ink-soft);margin-top:12px;max-width:56ch;}
+  .podo .btn{margin-top:20px;}
+  @media (min-width:860px){.podo-inner{grid-template-columns:1.2fr 0.8fr;}}
+
+  /* ---------- Contacto ---------- */
+  .contacto{padding:80px 0;}
+  .contacto-grid{display:grid;gap:30px;}
+  .info-list{display:flex;flex-direction:column;gap:22px;margin-top:26px;}
+  .info-item{display:flex;gap:14px;align-items:flex-start;}
+  .info-item svg{width:22px;height:22px;color:var(--green);flex:none;margin-top:2px;}
+  .info-item h4{font-size:0.95rem;font-weight:600;color:var(--plum-strong);font-family:"Work Sans",sans-serif;}
+  .info-item p{color:var(--ink-soft);font-size:0.92rem;margin-top:3px;}
+  .info-item .tag-pending{font-size:0.76rem;color:var(--ink-faint);font-style:italic;}
+  .contacto .ph{min-height:280px;}
+  @media (min-width:900px){.contacto-grid{grid-template-columns:1fr 1fr;}}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--footer-bg);color:var(--footer-ink);padding:56px 0 26px;}
+  .foot-grid{display:grid;gap:34px;}
+  .foot-brand{display:flex;align-items:center;gap:12px;}
+  .foot-brand img{height:46px;filter:drop-shadow(0 4px 10px rgba(0,0,0,0.35));}
+  .foot-brand span{font-family:"Fraunces",serif;font-style:italic;font-size:1.15rem;}
+  .foot-tag{color:var(--footer-ink-soft);font-size:0.88rem;margin-top:12px;max-width:38ch;}
+  .foot-col h5{font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--footer-ink-soft);margin-bottom:14px;font-weight:600;}
+  .foot-col a{display:block;text-decoration:none;color:var(--footer-ink);opacity:0.88;font-size:0.92rem;margin-bottom:10px;}
+  .foot-col a:hover{opacity:1;text-decoration:underline;}
+  .foot-social{display:flex;gap:12px;}
+  .foot-social a{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:38px;height:38px;border-radius:50%;
+    border:1px solid rgba(241,228,238,0.28);
+  }
+  .foot-social svg{width:17px;height:17px;}
+  .foot-bottom{
+    margin-top:40px;padding-top:22px;border-top:1px solid rgba(241,228,238,0.16);
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;
+    font-size:0.8rem;color:var(--footer-ink-soft);
+  }
+  @media (min-width:860px){.foot-grid{grid-template-columns:1.3fr 0.8fr 0.8fr 1fr;}}
+
+  /* ---------- Floating WhatsApp ---------- */
+  .wa-float{
+    position:fixed;right:20px;bottom:20px;z-index:50;
+    width:58px;height:58px;border-radius:50%;
+    background:var(--plum);color:#FBF5EA;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 14px 30px -10px rgba(52,21,48,0.55);
+    text-decoration:none;
+  }
+  .wa-float svg{width:28px;height:28px;}
+  .wa-float::before{
+    content:"";position:absolute;inset:0;border-radius:50%;
+    border:2px solid var(--plum);
+    animation:pulse 2.6s ease-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce){.wa-float::before{animation:none;}}
+  @keyframes pulse{
+    0%{transform:scale(1);opacity:0.55;}
+    100%{transform:scale(1.6);opacity:0;}
+  }
+
+  :focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<div class="hero-blobs" style="display:none"></div>
+
+<header>
+  <nav class="nav">
+    <a class="brand" href="#top">
+      <img src="LOGO.png" alt="Nuestro Maqui">
+      <span class="brand-word">Nuestro Maqui<em>Hierbas del sur</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#somos">Nosotros</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#podologia">Podología</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-sm btn-nav" href="https://wa.me/56912345678?text=Hola%20Nuestro%20Maqui%2C%20quiero%20más%20información" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.87.5 3.62 1.4 5.13L2 22l4.98-1.31A9.96 9.96 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm0 18.1c-1.67 0-3.22-.48-4.53-1.32l-.32-.2-3.03.8.81-2.95-.21-.31A8.09 8.09 0 0 1 3.9 12c0-4.48 3.65-8.12 8.12-8.12S20.14 7.52 20.14 12s-3.65 8.1-8.12 8.1z"/></svg>
+        WhatsApp
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#somos">Nosotros</a>
+    <a href="#productos">Productos</a>
+    <a href="#podologia">Podología</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://wa.me/56912345678?text=Hola%20Nuestro%20Maqui%2C%20quiero%20más%20información" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-blobs" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <img class="hero-logo" src="LOGO.png" alt="Logo Nuestro Maqui — fruto de maqui con hojas, ilustración en acuarela">
+      <div class="hero-copy">
+        <span class="eyebrow">Medicina natural del sur de Chile</span>
+        <h1>Hierbas medicinales, raíces del sur</h1>
+        <p class="tag">Traemos maqui, cardo mariano, polen de abeja y otras hierbas directo desde el sur de Chile, con el conocimiento de la medicina natural detrás de cada producto.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://wa.me/56912345678?text=Hola%20Nuestro%20Maqui%2C%20quiero%20más%20información" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.87.5 3.62 1.4 5.13L2 22l4.98-1.31A9.96 9.96 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm0 18.1c-1.67 0-3.22-.48-4.53-1.32l-.32-.2-3.03.8.81-2.95-.21-.31A8.09 8.09 0 0 1 3.9 12c0-4.48 3.65-8.12 8.12-8.12S20.14 7.52 20.14 12s-3.65 8.1-8.12 8.1z"/></svg>
+            Contactar por WhatsApp
+          </a>
+          <a class="btn btn-ghost" href="#productos">Ver productos</a>
+        </div>
+        <p class="hero-scroll">↓ Cardo mariano · Polen de abeja · Maqui deshidratado</p>
+      </div>
+    </div>
+    <svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C200,60 350,0 600,20 C850,40 1000,55 1200,20 L1200,60 L0,60 Z" fill="var(--bg-alt)"></path></svg>
+  </section>
+
+  <section class="somos" id="somos">
+    <div class="wrap somos-grid">
+      <div class="somos-text">
+        <span class="eyebrow">Quiénes somos</span>
+        <h2>Un puente entre el sur de Chile y tu bienestar</h2>
+        <p>Nuestro Maqui nace del trabajo de un profesional de la salud formado en podología, reflexología y medicina natural, que decidió compartir las hierbas que su familia ha usado por generaciones en el sur de Chile.</p>
+        <p>Cada producto se selecciona a mano y se trae directo desde su lugar de origen, sin intermediarios, cuidando que llegue a tus manos tal como la naturaleza lo entrega.</p>
+      </div>
+      <div class="ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2c3 3.5 5 7 5 10.5A5 5 0 0 1 7 12.5C7 9 9 5.5 12 2z"/><path d="M12 22v-9"/></svg>
+        <p class="ph-label">Foto pendiente — hierbas recién cosechadas del sur</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="productos" id="productos">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Lo que traemos del sur</span>
+        <h2>Nuestros productos</h2>
+        <p>Hierbas y productos naturales seleccionados por su calidad y origen. Iremos sumando nuevas variedades a medida que crece Nuestro Maqui.</p>
+      </div>
+      <div class="prod-grid">
+        <article class="card">
+          <div class="ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="13" r="3.2"/><circle cx="14.5" cy="9.5" r="2.4"/><circle cx="15.5" cy="15" r="2"/><path d="M9 9.8C9.5 7 11.5 5 14 4.3"/></svg>
+            <p class="ph-label">Foto pendiente — Maqui deshidratado</p>
+          </div>
+          <h3>Maqui deshidratado</h3>
+          <p class="desc">Fruto silvestre del sur de Chile, reconocido por su altísimo contenido de antioxidantes (antocianinas). Usado tradicionalmente por pueblos originarios como aporte al bienestar general.</p>
+          <a class="btn btn-ghost btn-sm" href="https://wa.me/56912345678?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20Maqui%20deshidratado" target="_blank" rel="noopener">Consultar disponibilidad</a>
+        </article>
+        <article class="card">
+          <div class="ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M22 12h-3M5 12H2M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7 5.6 5.6"/></svg>
+            <p class="ph-label">Foto pendiente — Cardo mariano</p>
+          </div>
+          <h3>Cardo mariano</h3>
+          <p class="desc">Planta tradicionalmente utilizada para apoyar el bienestar hepático y digestivo, gracias a su contenido de silimarina.</p>
+          <a class="btn btn-ghost btn-sm" href="https://wa.me/56912345678?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20Cardo%20mariano" target="_blank" rel="noopener">Consultar disponibilidad</a>
+        </article>
+        <article class="card">
+          <div class="ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l2.2 3.8L18 8l-3 3 .7 4.2L12 13.6 8.3 15.2 9 11 6 8l3.8-1.2z"/></svg>
+            <p class="ph-label">Foto pendiente — Polen de abeja</p>
+          </div>
+          <h3>Polen de abeja</h3>
+          <p class="desc">Producto natural rico en aminoácidos y nutrientes, tradicionalmente usado como energizante natural.</p>
+          <a class="btn btn-ghost btn-sm" href="https://wa.me/56912345678?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20Polen%20de%20abeja" target="_blank" rel="noopener">Consultar disponibilidad</a>
+        </article>
+      </div>
+      <div class="disclaimer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 9v4M12 17h.01M10.3 3.9 2.5 17.5A1.8 1.8 0 0 0 4 20.2h16a1.8 1.8 0 0 0 1.5-2.7L13.7 3.9a1.8 1.8 0 0 0-3.4 0z"/></svg>
+        <p>Este producto no reemplaza un tratamiento médico. Consulte a su médico si tiene alguna condición de salud. La información presentada corresponde a usos tradicionales y aportes nutricionales, no a propiedades curativas o medicinales certificadas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="podo" id="podologia">
+    <div class="wrap">
+      <div class="podo-inner">
+        <div>
+          <span class="podo-badge">Servicio complementario</span>
+          <h2>Podología y reflexología</h2>
+          <p>El mismo profesional detrás de Nuestro Maqui atiende sesiones de podología y reflexología, con formación en medicina natural. Un espacio de cuidado para tus pies, pensado desde el bienestar integral.</p>
+          <a class="btn btn-primary btn-sm" href="https://wa.me/56912345678?text=Hola%2C%20quiero%20agendar%20una%20hora%20de%20podolog%C3%ADa%20o%20reflexolog%C3%ADa" target="_blank" rel="noopener">Agendar por WhatsApp</a>
+        </div>
+        <div class="ph" style="min-height:150px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 21c-1-3 1-5 1-8 0-2.5-1.5-3-1.5-5A3 3 0 0 1 13 6.5c0 2-1 3-1 5"/><path d="M14 21c1-2 3-2 3-5 0-1.5-1-2-1-4a2.5 2.5 0 0 1 5 0c0 3-1.5 4-1.5 6"/></svg>
+          <p class="ph-label">Foto pendiente — sesión de podología</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Ubicación y contacto</span>
+        <h2>Conversemos por WhatsApp</h2>
+        <p>Escríbenos para consultar disponibilidad, precios o coordinar tu hora de podología y reflexología.</p>
+      </div>
+      <div class="contacto-grid">
+        <div>
+          <div class="info-list">
+            <div class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.87.5 3.62 1.4 5.13L2 22l4.98-1.31A9.96 9.96 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2z"/></svg>
+              <div>
+                <h4>WhatsApp</h4>
+                <p>+56 9 1234 5678</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+              <div>
+                <h4>Ubicación</h4>
+                <p>Punto de atención — por confirmar</p>
+                <span class="tag-pending">Dirección exacta a confirmar con el cliente</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+              <div>
+                <h4>Correo</h4>
+                <p>contacto@nuestromaqui.cl</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+          <p class="ph-label">Mapa próximamente</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <div class="foot-brand">
+        <img src="LOGO.png" alt="Nuestro Maqui">
+        <span>Nuestro Maqui</span>
+      </div>
+      <p class="foot-tag">Hierbas medicinales del sur de Chile, más podología y reflexología, en un solo lugar de confianza.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Explorar</h5>
+      <a href="#somos">Nosotros</a>
+      <a href="#productos">Productos</a>
+      <a href="#podologia">Podología</a>
+    </div>
+    <div class="foot-col">
+      <h5>Contacto</h5>
+      <a href="https://wa.me/56912345678" target="_blank" rel="noopener">+56 9 1234 5678</a>
+      <a href="mailto:contacto@nuestromaqui.cl">contacto@nuestromaqui.cl</a>
+    </div>
+    <div class="foot-col">
+      <h5>Síguenos</h5>
+      <div class="foot-social">
+        <a href="https://instagram.com/nuestromaqui" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        </a>
+        <a href="https://tiktok.com/@nuestromaqui" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 4v9.6a3.6 3.6 0 1 1-3-3.55"/><path d="M14 4c.3 2 1.8 3.6 4 4"/></svg>
+        </a>
+        <a href="https://facebook.com/nuestromaqui" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 9h2.5V6H14c-1.9 0-3 1.3-3 3.2V12H9v3h2v6h3v-6h2.2l.5-3H14V9.6c0-.4.2-.6.6-.6z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Nuestro Maqui — hierbas medicinales del sur de Chile.</span>
+    <span>Sitio en construcción · fase 1</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/56912345678?text=Hola%20Nuestro%20Maqui%2C%20quiero%20más%20información" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.87.5 3.62 1.4 5.13L2 22l4.98-1.31A9.96 9.96 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm0 18.1c-1.67 0-3.22-.48-4.53-1.32l-.32-.2-3.03.8.81-2.95-.21-.31A8.09 8.09 0 0 1 3.9 12c0-4.48 3.65-8.12 8.12-8.12S20.14 7.52 20.14 12s-3.65 8.1-8.12 8.1z"/></svg>
+</a>
+
+<script>
+  var toggle = document.getElementById('menuToggle');
+  var panel = document.getElementById('mobilePanel');
+  toggle.addEventListener('click', function(){
+    var isOpen = panel.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  panel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      panel.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+</body>
+</html>
