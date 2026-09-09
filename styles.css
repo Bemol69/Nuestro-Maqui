@@ -394,6 +394,52 @@ footer{background:var(--footer-bg);color:var(--footer-ink);padding:56px 0 26px;}
   .product-hero-grid{grid-template-columns:1fr 1fr;align-items:center;}
 }
 
+/* ---------- Product banner (photo background + cutout) ---------- */
+.product-banner{
+  position:relative;
+  overflow:hidden;
+  border-radius:28px 8px 28px 8px;
+  isolation:isolate;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:380px;
+  padding:36px 20px;
+  box-shadow:var(--shadow);
+}
+.product-banner-bg{
+  position:absolute;inset:0;z-index:0;
+  background-size:cover;
+  background-position:center;
+}
+.product-banner-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg, rgba(42,17,39,0.5) 0%, rgba(42,17,39,0.92) 78%);
+}
+.product-banner-cutout{
+  position:relative;z-index:2;
+  width:min(220px, 58%);
+  filter:drop-shadow(0 24px 30px rgba(0,0,0,0.5));
+}
+.product-banner-copy{
+  position:relative;z-index:2;
+  text-align:center;
+  color:#FBF5EA;
+  margin-top:22px;
+}
+.product-banner-copy .eyebrow{color:var(--gold);}
+.product-banner-copy h1{color:#FBF5EA;margin-top:10px;}
+.product-banner-copy .lead{color:rgba(251,245,234,0.85);margin-top:14px;max-width:52ch;margin-left:auto;margin-right:auto;}
+.product-banner-copy .product-cta{justify-content:center;}
+@media (min-width:800px){
+  .product-banner{flex-direction:row;align-items:center;justify-content:flex-start;padding:0;min-height:440px;}
+  .product-banner-overlay{background:linear-gradient(100deg, rgba(42,17,39,0.95) 0%, rgba(42,17,39,0.82) 42%, rgba(42,17,39,0.28) 70%, rgba(42,17,39,0.05) 100%);}
+  .product-banner-cutout{width:min(300px, 32%);margin-left:clamp(20px,5vw,64px);flex:none;}
+  .product-banner-copy{text-align:left;margin-top:0;padding:40px clamp(24px,5vw,56px) 40px 40px;}
+  .product-banner-copy .lead{margin-left:0;}
+  .product-banner-copy .product-cta{justify-content:flex-start;}
+}
+
 .benefits{padding:10px 0 70px;}
 .benefits-grid{display:grid;gap:16px;grid-template-columns:1fr;margin-top:32px;}
 @media (min-width:640px){.benefits-grid{grid-template-columns:1fr 1fr;}}
