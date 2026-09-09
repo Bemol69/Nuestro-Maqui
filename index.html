@@ -283,6 +283,17 @@
   .ph svg{width:40px;height:40px;color:var(--plum);opacity:0.7;}
   .ph .ph-label{font-size:0.82rem;color:var(--ink-faint);font-style:italic;}
 
+  .pic{
+    position:relative;
+    border-radius:26px 8px 26px 8px;
+    overflow:hidden;
+    aspect-ratio:4/3;
+    box-shadow:var(--shadow);
+  }
+  .pic img{width:100%;height:100%;object-fit:cover;display:block;}
+  .pic.pic-top img{object-position:center 15%;}
+  .card .pic{aspect-ratio:5/4;}
+
   /* ---------- Quienes somos ---------- */
   .somos{padding:76px 0;}
   .somos-grid{display:grid;gap:36px;align-items:center;}
@@ -494,27 +505,24 @@
       </div>
       <div class="prod-grid">
         <article class="card">
-          <div class="ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="13" r="3.2"/><circle cx="14.5" cy="9.5" r="2.4"/><circle cx="15.5" cy="15" r="2"/><path d="M9 9.8C9.5 7 11.5 5 14 4.3"/></svg>
-            <p class="ph-label">Foto pendiente — Maqui deshidratado</p>
+          <div class="pic">
+            <img src="img/maqui.jpg" alt="Racimo de bayas de maqui silvestre, fruto morado oscuro del sur de Chile">
           </div>
           <h3>Maqui deshidratado</h3>
           <p class="desc">Fruto silvestre del sur de Chile, reconocido por su altísimo contenido de antioxidantes (antocianinas). Usado tradicionalmente por pueblos originarios como aporte al bienestar general.</p>
           <a class="btn btn-ghost btn-sm" href="https://wa.me/56912345678?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20Maqui%20deshidratado" target="_blank" rel="noopener">Consultar disponibilidad</a>
         </article>
         <article class="card">
-          <div class="ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M22 12h-3M5 12H2M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M18.4 18.4l-2.1-2.1M7.7 7.7 5.6 5.6"/></svg>
-            <p class="ph-label">Foto pendiente — Cardo mariano</p>
+          <div class="pic pic-top">
+            <img src="img/cardo-mariano.jpg" alt="Flor de cardo mariano, planta silvestre de color púrpura usada tradicionalmente para el bienestar hepático">
           </div>
           <h3>Cardo mariano</h3>
           <p class="desc">Planta tradicionalmente utilizada para apoyar el bienestar hepático y digestivo, gracias a su contenido de silimarina.</p>
           <a class="btn btn-ghost btn-sm" href="https://wa.me/56912345678?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20Cardo%20mariano" target="_blank" rel="noopener">Consultar disponibilidad</a>
         </article>
         <article class="card">
-          <div class="ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l2.2 3.8L18 8l-3 3 .7 4.2L12 13.6 8.3 15.2 9 11 6 8l3.8-1.2z"/></svg>
-            <p class="ph-label">Foto pendiente — Polen de abeja</p>
+          <div class="pic">
+            <img src="img/polen.jpg" alt="Gránulos de polen de abeja de distintos colores, producto natural rico en nutrientes">
           </div>
           <h3>Polen de abeja</h3>
           <p class="desc">Producto natural rico en aminoácidos y nutrientes, tradicionalmente usado como energizante natural.</p>
@@ -626,6 +634,9 @@
   <div class="wrap foot-bottom">
     <span>© 2026 Nuestro Maqui — hierbas medicinales del sur de Chile.</span>
     <span>Sitio en construcción · fase 1</span>
+  </div>
+  <div class="wrap foot-bottom" style="margin-top:8px;padding-top:0;border-top:none;">
+    <span>Fotos de productos: Denis Prevot, Zeynel Cebeci y Waugsberg, vía <a href="https://commons.wikimedia.org" target="_blank" rel="noopener" style="text-decoration:underline;">Wikimedia Commons</a> (CC BY-SA) — a reemplazar por fotografía propia.</span>
   </div>
 </footer>
 
