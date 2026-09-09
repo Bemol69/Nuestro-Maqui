@@ -380,77 +380,51 @@ footer{background:var(--footer-bg);color:var(--footer-ink);padding:56px 0 26px;}
 .back-link svg{width:16px;height:16px;}
 .back-bar{padding:22px 0 0;}
 
-/* ---------- Product showcase (colorful badge + benefit chips) ---------- */
-.showcase{padding:10px 0 20px;}
-.showcase-grid{display:grid;gap:36px;align-items:center;}
-@media (min-width:860px){
-  .showcase-grid{grid-template-columns:0.85fr 1.15fr;gap:56px;}
-}
-
-.showcase-badge{
+/* ---------- Product banner (photo background + cutout) ---------- */
+.product-banner{
   position:relative;
-  width:min(320px, 78%);
-  aspect-ratio:1/1;
-  margin:0 auto;
-  display:flex;align-items:center;justify-content:center;
-}
-.showcase-badge .glow{
-  position:absolute;inset:-16%;z-index:0;border-radius:50%;
-  background:
-    radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--gold) 65%, transparent), transparent 62%),
-    radial-gradient(circle at 72% 74%, color-mix(in srgb, var(--green) 55%, transparent), transparent 60%);
-  filter:blur(22px);
-  opacity:0.85;
-}
-.showcase-badge .ring{
-  position:absolute;inset:0;z-index:1;border-radius:50%;
-  background:radial-gradient(circle at 34% 30%, var(--plum) 0%, var(--plum-strong) 72%);
-  box-shadow:
-    inset 0 0 0 6px color-mix(in srgb, var(--gold) 55%, transparent),
-    var(--shadow);
-}
-.showcase-badge .sparkle{position:absolute;z-index:2;color:var(--gold);display:block;}
-.showcase-badge .sparkle svg{display:block;width:100%;height:100%;}
-.showcase-badge .sparkle.s1{width:26px;height:26px;top:4%;right:14%;}
-.showcase-badge .sparkle.s2{width:18px;height:18px;bottom:10%;left:2%;color:var(--green);}
-.showcase-badge img{
-  position:relative;z-index:2;
-  width:70%;
-  filter:drop-shadow(0 18px 22px rgba(0,0,0,0.4));
-}
-.showcase-badge img.circle-crop{
-  width:82%;height:82%;border-radius:50%;object-fit:cover;
-  border:4px solid color-mix(in srgb, var(--gold) 70%, transparent);
-}
-
-.showcase-copy{text-align:center;}
-.showcase-copy h1{margin-top:10px;font-style:italic;font-weight:500;font-size:clamp(2rem,4.4vw,2.6rem);}
-.showcase-copy .lead{color:var(--ink-soft);margin-top:12px;max-width:48ch;margin-left:auto;margin-right:auto;}
-.showcase-benefits{
-  display:flex;flex-direction:column;gap:12px;
-  margin-top:26px;
+  overflow:hidden;
+  border-radius:28px 8px 28px 8px;
+  isolation:isolate;
+  display:flex;
+  flex-direction:column;
   align-items:center;
-}
-.showcase-benefit{
-  display:inline-flex;align-items:center;gap:12px;
-  background:var(--surface);border:1px solid var(--border-soft);
-  border-radius:100px;padding:8px 20px 8px 8px;
+  min-height:380px;
+  padding:36px 20px;
   box-shadow:var(--shadow);
 }
-.showcase-benefit .dot{
-  width:34px;height:34px;border-radius:50%;flex:none;
-  background:var(--green-tint);color:var(--green);
-  display:flex;align-items:center;justify-content:center;
+.product-banner-bg{
+  position:absolute;inset:0;z-index:0;
+  background-size:cover;
+  background-position:center;
 }
-.showcase-benefit .dot svg{width:18px;height:18px;}
-.showcase-benefit span{font-weight:600;color:var(--plum-strong);font-size:0.98rem;white-space:nowrap;}
-.showcase-cta{margin-top:30px;display:flex;justify-content:center;}
-.showcase-cta .btn{padding:15px 30px;font-size:1rem;}
-@media (min-width:860px){
-  .showcase-copy{text-align:left;}
-  .showcase-copy .lead{margin-left:0;}
-  .showcase-benefits{align-items:flex-start;}
-  .showcase-cta{justify-content:flex-start;}
+.product-banner-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg, rgba(42,17,39,0.5) 0%, rgba(42,17,39,0.92) 78%);
+}
+.product-banner-cutout{
+  position:relative;z-index:2;
+  width:min(220px, 58%);
+  filter:drop-shadow(0 24px 30px rgba(0,0,0,0.5));
+}
+.product-banner-copy{
+  position:relative;z-index:2;
+  text-align:center;
+  color:#FBF5EA;
+  margin-top:22px;
+}
+.product-banner-copy .eyebrow{color:var(--gold);}
+.product-banner-copy h1{color:#FBF5EA;margin-top:10px;font-style:italic;font-weight:500;}
+.product-banner-copy .lead{color:rgba(251,245,234,0.85);margin-top:14px;max-width:52ch;margin-left:auto;margin-right:auto;}
+.product-banner-copy .product-cta{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+.product-banner.no-cutout .product-banner-copy{margin-top:0;}
+@media (min-width:800px){
+  .product-banner{flex-direction:row;align-items:center;justify-content:flex-start;padding:0;min-height:440px;}
+  .product-banner-overlay{background:linear-gradient(100deg, rgba(42,17,39,0.95) 0%, rgba(42,17,39,0.82) 42%, rgba(42,17,39,0.28) 70%, rgba(42,17,39,0.05) 100%);}
+  .product-banner-cutout{width:min(300px, 32%);margin-left:clamp(20px,5vw,64px);flex:none;}
+  .product-banner-copy{text-align:left;margin-top:0;padding:40px clamp(24px,5vw,56px) 40px 40px;}
+  .product-banner-copy .lead{margin-left:0;}
+  .product-banner-copy .product-cta{justify-content:flex-start;}
 }
 
 .benefits{padding:10px 0 70px;}
