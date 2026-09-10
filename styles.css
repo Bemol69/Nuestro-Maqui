@@ -250,7 +250,7 @@ header{
   position:absolute;inset:0;
   display:flex;align-items:center;justify-content:center;
   opacity:0;
-  animation:heroSlideCycle 13.5s ease-in-out infinite;
+  animation:heroSlideCycle 18s ease-in-out infinite;
 }
 .hero-slide img{
   width:78%;max-height:100%;object-fit:contain;
@@ -258,11 +258,12 @@ header{
 }
 .hero-slide:nth-child(2){animation-delay:4.5s;}
 .hero-slide:nth-child(3){animation-delay:9s;}
+.hero-slide:nth-child(4){animation-delay:13.5s;}
 @keyframes heroSlideCycle{
   0%{opacity:0;transform:scale(0.9) translateY(12px);}
-  6%{opacity:1;transform:scale(1) translateY(0);}
-  27%{opacity:1;transform:scale(1) translateY(0);}
-  34%{opacity:0;transform:scale(0.9) translateY(-12px);}
+  4%{opacity:1;transform:scale(1) translateY(0);}
+  20%{opacity:1;transform:scale(1) translateY(0);}
+  25%{opacity:0;transform:scale(0.9) translateY(-12px);}
   100%{opacity:0;}
 }
 @media (prefers-reduced-motion: reduce){
