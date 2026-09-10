@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- SEO: reemplazar "https://nuestromaqui.cl/" por el dominio real una vez esté comprado -->
+<!-- SEO: reemplazar "https://hierbasmedicinalesrengo.cl/" por el dominio real una vez esté comprado -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nuestromaqui.cl/</loc>
+    <loc>https://hierbasmedicinalesrengo.cl/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nuestromaqui.cl/maqui-deshidratado.html</loc>
+    <loc>https://hierbasmedicinalesrengo.cl/maqui-deshidratado.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nuestromaqui.cl/cardo-mariano.html</loc>
+    <loc>https://hierbasmedicinalesrengo.cl/cardo-mariano.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nuestromaqui.cl/polen-de-abeja.html</loc>
+    <loc>https://hierbasmedicinalesrengo.cl/polen-de-abeja.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
