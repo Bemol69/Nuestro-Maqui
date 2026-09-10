@@ -194,12 +194,21 @@ header{
   background:var(--bg);
 }
 .hero-blobs{
-  position:absolute;inset:0;z-index:0;pointer-events:none;
+  position:absolute;inset:-8%;z-index:0;pointer-events:none;
   background:
     radial-gradient(480px 380px at 82% -6%, color-mix(in srgb, var(--green) 30%, transparent), transparent 70%),
     radial-gradient(520px 420px at -8% 30%, color-mix(in srgb, var(--plum) 24%, transparent), transparent 70%),
     radial-gradient(360px 300px at 60% 92%, color-mix(in srgb, var(--gold) 22%, transparent), transparent 70%);
   filter:blur(6px);
+  animation:heroDrift 26s ease-in-out infinite alternate;
+}
+@keyframes heroDrift{
+  0%{transform:translate(0,0) scale(1);}
+  50%{transform:translate(3%,-3%) scale(1.07);}
+  100%{transform:translate(-2.5%,2.5%) scale(1);}
+}
+@media (prefers-reduced-motion: reduce){
+  .hero-blobs{animation:none;}
 }
 .hero-inner{
   position:relative;z-index:1;
@@ -325,6 +334,27 @@ header{
 @media (prefers-reduced-motion: reduce){
   .productos::after{animation:none;}
 }
+
+.leaf-field{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none;}
+.leaf{
+  position:absolute;top:-8%;
+  color:var(--green);opacity:0;
+  animation:leafFall linear infinite;
+  will-change:transform;
+}
+.leaf.gold{color:var(--gold);}
+.leaf svg{display:block;width:100%;height:100%;}
+@keyframes leafFall{
+  0%{transform:translate(0,0) rotate(-10deg);opacity:0;}
+  8%{opacity:0.4;}
+  50%{transform:translate(28px,360px) rotate(150deg);}
+  92%{opacity:0.35;}
+  100%{transform:translate(-16px,760px) rotate(300deg);opacity:0;}
+}
+@media (prefers-reduced-motion: reduce){
+  .leaf{animation:none;display:none;}
+}
+
 .prod-grid{display:grid;gap:26px;grid-template-columns:1fr;}
 @media (min-width:760px){.prod-grid{grid-template-columns:repeat(3,1fr);}}
 .card{
