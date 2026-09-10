@@ -543,6 +543,42 @@ footer{background:var(--footer-bg);color:var(--footer-ink);padding:56px 0 26px;}
   100%{transform:scale(1.6);opacity:0;}
 }
 
+/* ---------- Floating music player ---------- */
+.music-float{
+  position:fixed;left:20px;bottom:20px;z-index:50;
+  width:56px;height:56px;border-radius:50%;
+  border:none;cursor:pointer;padding:0;
+  background:conic-gradient(from 200deg, var(--gold), var(--plum), var(--green), var(--gold));
+  color:#FBF5EA;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 14px 28px -10px rgba(28,62,32,0.5);
+  transition:transform .15s ease;
+}
+.music-float::before{
+  content:"";position:absolute;inset:3px;border-radius:50%;
+  background:var(--plum-strong);
+}
+.music-float:hover{transform:scale(1.06);}
+.music-float:active{transform:scale(0.92);}
+.music-float .icon-play,
+.music-float .eq-bars{position:relative;z-index:1;}
+.music-float .icon-play{width:20px;height:20px;margin-left:2px;}
+.music-float .eq-bars{display:none;align-items:flex-end;gap:3px;height:18px;}
+.music-float .eq-bars span{
+  width:3px;background:#FBF5EA;border-radius:2px;height:6px;
+  animation:eqBounce 0.9s ease-in-out infinite;
+}
+.music-float .eq-bars span:nth-child(1){animation-delay:0s;}
+.music-float .eq-bars span:nth-child(2){animation-delay:0.15s;}
+.music-float .eq-bars span:nth-child(3){animation-delay:0.3s;}
+.music-float .eq-bars span:nth-child(4){animation-delay:0.45s;}
+.music-float.playing .icon-play{display:none;}
+.music-float.playing .eq-bars{display:flex;}
+@keyframes eqBounce{0%,100%{height:5px;}50%{height:17px;}}
+@media (prefers-reduced-motion: reduce){
+  .music-float .eq-bars span{animation:none;height:12px;}
+}
+
 /* ---------- Product detail page ---------- */
 .back-link{
   display:inline-flex;align-items:center;gap:6px;
