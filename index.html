@@ -126,9 +126,19 @@
         <p>Hierbas medicinales 100% naturales, seleccionadas por su calidad y pureza. Iremos sumando nuevas variedades a medida que sigamos creciendo.</p>
       </div>
       <div class="prod-strip">
-        <div class="scroll-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg>
-          Desliza para ver todos los productos
+        <div class="strip-bar">
+          <div class="scroll-hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg>
+            Desliza o usa las flechas
+          </div>
+          <div class="prod-nav">
+            <button type="button" id="prodPrev" aria-label="Producto anterior">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button type="button" id="prodNext" aria-label="Siguiente producto">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
         </div>
         <div class="prod-grid">
         <article class="card">
@@ -137,7 +147,20 @@
             <img class="pic-alt" src="img/maqui-producto.jpg" alt="Maqui deshidratado ya envasado, listo para consumir">
           </div>
           <h3>Maqui deshidratado</h3>
-          <p class="desc">Fruto silvestre reconocido por su altísimo contenido de antioxidantes (antocianinas). Usado tradicionalmente como aporte al bienestar general.</p>
+          <ul class="mini-benefits">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg>Ayuda a prevenir el cáncer</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg>Regula los niveles de azúcar en la sangre (Diabetes)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg>Retarda el envejecimiento</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg>Protege sistema cardiovascular</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg>Reduce los niveles de colesterol</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg>Propiedades antiinflamatorias</li>
+          </ul>
+          <div class="qty-row">
+            <span class="qty-label">Cantidad</span>
+            <label class="qty-chip"><input type="radio" name="qty-maqui" checked><span>100 grs</span></label>
+            <label class="qty-chip"><input type="radio" name="qty-maqui"><span>200 grs</span></label>
+            <label class="qty-chip"><input type="radio" name="qty-maqui"><span>400 grs</span></label>
+          </div>
           <div class="card-actions">
             <a class="btn btn-ghost btn-sm" href="maqui-deshidratado.html">Saber más</a>
             <a class="btn btn-primary btn-sm" href="https://wa.me/56996326823?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20Maqui%20deshidratado" target="_blank" rel="noopener">Consultar disponibilidad</a>
@@ -149,6 +172,12 @@
           </div>
           <h3>Cardo mariano</h3>
           <p class="desc">Planta tradicionalmente utilizada para apoyar el bienestar hepático y digestivo, gracias a su contenido de silimarina.</p>
+          <div class="qty-row">
+            <span class="qty-label">Cantidad</span>
+            <label class="qty-chip"><input type="radio" name="qty-cardo" checked><span>100 grs</span></label>
+            <label class="qty-chip"><input type="radio" name="qty-cardo"><span>200 grs</span></label>
+            <label class="qty-chip"><input type="radio" name="qty-cardo"><span>400 grs</span></label>
+          </div>
           <div class="card-actions">
             <a class="btn btn-ghost btn-sm" href="cardo-mariano.html">Saber más</a>
             <a class="btn btn-primary btn-sm" href="https://wa.me/56996326823?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20Cardo%20mariano" target="_blank" rel="noopener">Consultar disponibilidad</a>
@@ -161,6 +190,12 @@
           </div>
           <h3>Polen de abeja</h3>
           <p class="desc">Producto natural rico en aminoácidos y nutrientes, tradicionalmente usado como energizante natural.</p>
+          <div class="qty-row">
+            <span class="qty-label">Cantidad</span>
+            <label class="qty-chip"><input type="radio" name="qty-polen" checked><span>100 grs</span></label>
+            <label class="qty-chip"><input type="radio" name="qty-polen"><span>200 grs</span></label>
+            <label class="qty-chip"><input type="radio" name="qty-polen"><span>400 grs</span></label>
+          </div>
           <div class="card-actions">
             <a class="btn btn-ghost btn-sm" href="polen-de-abeja.html">Saber más</a>
             <a class="btn btn-primary btn-sm" href="https://wa.me/56996326823?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20Polen%20de%20abeja" target="_blank" rel="noopener">Consultar disponibilidad</a>
@@ -298,6 +333,20 @@
       toggle.setAttribute('aria-expanded', 'false');
     });
   });
+
+  var strip = document.querySelector('.prod-grid');
+  var prevBtn = document.getElementById('prodPrev');
+  var nextBtn = document.getElementById('prodNext');
+  if (strip && prevBtn && nextBtn) {
+    var scrollStrip = function(dir){
+      var card = strip.querySelector('.card');
+      var gap = 26;
+      var amount = (card ? card.getBoundingClientRect().width : 300) + gap;
+      strip.scrollBy({ left: dir * amount, behavior: 'smooth' });
+    };
+    prevBtn.addEventListener('click', function(){ scrollStrip(-1); });
+    nextBtn.addEventListener('click', function(){ scrollStrip(1); });
+  }
 </script>
 </body>
 </html>
