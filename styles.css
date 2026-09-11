@@ -482,7 +482,7 @@ header{
   position:relative;
   background:none;border:none;box-shadow:none;padding:0;
   display:block;
-  min-height:530px;
+  min-height:420px;
   perspective:1500px;
 }
 .flip-inner{
@@ -501,12 +501,12 @@ header{
   box-shadow:none;
   text-align:center;
 }
-.flip-front{padding-top:46px;}
+.flip-front{padding-top:40px;}
 .flip-back{
   transform:rotateY(180deg);
   overflow-y:auto;
   text-align:left;
-  padding-top:50px;
+  padding-top:44px;
 }
 .flip-back::-webkit-scrollbar{width:6px;}
 .flip-back::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
@@ -523,7 +523,7 @@ header{
 .flip-trigger svg{width:17px;height:17px;}
 .flip-back-close{position:absolute;top:14px;right:14px;}
 .shelf-pic{
-  width:100%;aspect-ratio:4/5;
+  width:100%;height:200px;
   display:flex;align-items:center;justify-content:center;
   margin-bottom:2px;
   cursor:pointer;
