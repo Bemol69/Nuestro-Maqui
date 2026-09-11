@@ -435,23 +435,6 @@ header{
   width:min(380px, 86vw);
   scroll-snap-align:start;
 }
-.qty-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
-.qty-row .qty-label{
-  font-size:0.74rem;font-weight:700;color:var(--ink-faint);
-  text-transform:uppercase;letter-spacing:0.06em;
-  width:100%;
-}
-.qty-chip{
-  position:relative;
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:7px 14px;border-radius:100px;
-  border:1px solid var(--border);
-  font-size:0.84rem;font-weight:600;color:var(--ink-soft);
-  cursor:pointer;
-  transition:background .15s ease, color .15s ease, border-color .15s ease;
-}
-.qty-chip input{position:absolute;opacity:0;width:0;height:0;}
-.qty-chip:has(input:checked){background:var(--plum);color:#FBF5EA;border-color:var(--plum);}
 .pic.pic-placeholder{
   display:flex;align-items:center;justify-content:center;
   background:linear-gradient(160deg, var(--surface), var(--green-tint));
@@ -488,9 +471,41 @@ header{
   .card:hover .pic img{transform:none;}
 }
 
-/* ---------- Shelf-style product cards ---------- */
-.shelf-card{position:relative;align-items:stretch;padding-top:46px;text-align:center;}
-.shelf-card .info-btn{
+/* ---------- Shelf-style product cards (flip to reveal benefits) ---------- */
+.shelf-card{
+  position:relative;
+  background:none;border:none;box-shadow:none;padding:0;
+  display:block;
+  min-height:530px;
+  perspective:1500px;
+}
+.flip-inner{
+  position:absolute;inset:0;
+  transform-style:preserve-3d;
+  transition:transform .65s cubic-bezier(.4,.15,.2,1);
+}
+.shelf-card.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-front,.flip-back{
+  position:absolute;inset:0;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  display:flex;flex-direction:column;gap:14px;
+  padding:22px;
+  border-radius:22px 22px 22px 4px;
+  background:linear-gradient(160deg, var(--surface) 0%, color-mix(in srgb, var(--card-accent, var(--plum)) 14%, var(--surface)) 100%);
+  border:1px solid color-mix(in srgb, var(--card-accent, var(--border-soft)) 32%, var(--border-soft));
+  box-shadow:var(--shadow);
+  text-align:center;
+}
+.flip-front{padding-top:46px;}
+.flip-back{
+  transform:rotateY(180deg);
+  overflow-y:auto;
+  text-align:left;
+  padding-top:50px;
+}
+.flip-back::-webkit-scrollbar{width:6px;}
+.flip-back::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+.flip-trigger{
   position:absolute;top:14px;right:14px;z-index:2;
   width:32px;height:32px;border-radius:50%;flex:none;
   background:var(--surface);border:1px solid var(--border);
@@ -499,12 +514,14 @@ header{
   box-shadow:var(--shadow);
   transition:transform .15s ease, background .15s ease;
 }
-.shelf-card .info-btn:hover{transform:scale(1.08);background:var(--plum-tint);}
-.shelf-card .info-btn svg{width:17px;height:17px;}
+.flip-trigger:hover{transform:scale(1.08);background:var(--plum-tint);}
+.flip-trigger svg{width:17px;height:17px;}
+.flip-back-close{position:absolute;top:14px;right:14px;}
 .shelf-pic{
   width:100%;aspect-ratio:4/5;
   display:flex;align-items:center;justify-content:center;
   margin-bottom:2px;
+  cursor:pointer;
 }
 .shelf-pic img{
   max-width:80%;max-height:100%;width:auto;height:auto;object-fit:contain;
@@ -512,17 +529,22 @@ header{
   transition:transform .4s ease;
 }
 .shelf-card:hover .shelf-pic img{transform:scale(1.05) translateY(-4px);}
-.shelf-card.pic-placeholder,
 .shelf-pic.pic-placeholder{
   background:linear-gradient(160deg, var(--surface), var(--green-tint));
   border:1.5px dashed var(--border);
   border-radius:16px;
+  cursor:default;
 }
 .shelf-pic.pic-placeholder svg{width:56px;height:56px;color:var(--green);opacity:0.6;filter:none;}
-.shelf-card h3{font-size:1.18rem;}
-.shelf-card .qty-row{justify-content:center;}
-.shelf-card .qty-row .qty-label{text-align:center;}
-.shelf-card .desc{color:var(--ink-soft);font-size:0.9rem;}
+.flip-front h3,.flip-back h3{font-size:1.18rem;}
+.flip-back h3{font-style:italic;padding-right:24px;}
+.flip-front .desc{color:var(--ink-soft);font-size:0.9rem;}
+.flip-back .mini-benefits{
+  list-style:none;margin:0;padding:0;flex:1;
+  display:flex;flex-direction:column;gap:9px;
+}
+.flip-back .mini-benefits li{display:flex;align-items:flex-start;gap:8px;font-size:0.86rem;color:var(--ink-soft);}
+.flip-back .mini-benefits svg{width:15px;height:15px;color:var(--green);flex:none;margin-top:2px;}
 .btn-buy{
   width:100%;justify-content:center;
   background:linear-gradient(135deg, var(--gold) 0%, color-mix(in srgb, var(--gold) 65%, var(--plum)) 100%);
@@ -540,47 +562,9 @@ header{
   text-underline-offset:2px;margin-top:-4px;
 }
 .shelf-more:hover{color:var(--plum);}
-
-/* ---------- Benefits modal ---------- */
-.benefits-modal{
-  position:fixed;inset:0;z-index:100;
-  display:none;align-items:center;justify-content:center;
-  padding:20px;
+@media (prefers-reduced-motion: reduce){
+  .flip-inner{transition:none;}
 }
-.benefits-modal.open{display:flex;}
-.benefits-modal-backdrop{
-  position:absolute;inset:0;
-  background:rgba(15,22,14,0.6);
-}
-.benefits-modal-panel{
-  position:relative;z-index:1;
-  background:var(--surface);
-  border-radius:20px;
-  max-width:440px;width:100%;
-  max-height:82vh;overflow-y:auto;
-  padding:30px 26px 26px;
-  box-shadow:0 34px 64px -18px rgba(0,0,0,0.45);
-  animation:modalPop .22s ease;
-}
-@keyframes modalPop{
-  0%{opacity:0;transform:scale(0.94) translateY(10px);}
-  100%{opacity:1;transform:scale(1) translateY(0);}
-}
-.benefits-modal-close{
-  position:absolute;top:16px;right:16px;
-  width:34px;height:34px;border-radius:50%;
-  border:none;background:var(--green-tint);color:var(--plum-strong);
-  cursor:pointer;padding:0;
-  display:flex;align-items:center;justify-content:center;
-  transition:background .15s ease;
-}
-.benefits-modal-close:hover{background:var(--gold-tint);}
-.benefits-modal-close svg{width:16px;height:16px;}
-.benefits-modal-panel h3{font-size:1.4rem;margin-top:8px;padding-right:20px;font-style:italic;}
-.benefits-modal-panel ul{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:13px;}
-.benefits-modal-panel li{display:flex;gap:10px;align-items:flex-start;font-size:0.95rem;color:var(--ink-soft);}
-.benefits-modal-panel li svg{width:18px;height:18px;color:var(--green);flex:none;margin-top:1px;}
-@media (prefers-reduced-motion: reduce){.benefits-modal-panel{animation:none;}}
 
 /* ---------- Contacto ---------- */
 .contacto{padding:80px 0;}
