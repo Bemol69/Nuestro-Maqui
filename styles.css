@@ -423,7 +423,7 @@ header{
   display:flex;
   gap:26px;
   overflow-x:auto;
-  scroll-snap-type:x proximity;
+  scroll-snap-type:x mandatory;
   padding:4px 4px 10px;
   margin:0 -4px;
   scrollbar-width:none;
@@ -432,8 +432,14 @@ header{
 .prod-grid::-webkit-scrollbar{display:none;height:0;}
 .prod-grid .card{
   flex:0 0 auto;
-  width:min(380px, 86vw);
+  width:100%;
   scroll-snap-align:start;
+}
+@media (min-width:680px){
+  .prod-grid .card{width:calc((100% - 26px) / 2);}
+}
+@media (min-width:1100px){
+  .prod-grid .card{width:calc((100% - 52px) / 3);}
 }
 .pic.pic-placeholder{
   display:flex;align-items:center;justify-content:center;
