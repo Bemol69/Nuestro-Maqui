@@ -490,10 +490,9 @@ header{
   backface-visibility:hidden;-webkit-backface-visibility:hidden;
   display:flex;flex-direction:column;gap:14px;
   padding:22px;
-  border-radius:22px 22px 22px 4px;
-  background:linear-gradient(160deg, var(--surface) 0%, color-mix(in srgb, var(--card-accent, var(--plum)) 14%, var(--surface)) 100%);
-  border:1px solid color-mix(in srgb, var(--card-accent, var(--border-soft)) 32%, var(--border-soft));
-  box-shadow:var(--shadow);
+  background:none;
+  border:none;
+  box-shadow:none;
   text-align:center;
 }
 .flip-front{padding-top:46px;}
@@ -538,6 +537,7 @@ header{
 .shelf-pic.pic-placeholder svg{width:56px;height:56px;color:var(--green);opacity:0.6;filter:none;}
 .flip-front h3,.flip-back h3{font-size:1.18rem;}
 .flip-back h3{font-style:italic;padding-right:24px;}
+.flip-back h3,.flip-back .eyebrow{cursor:pointer;}
 .flip-front .desc{color:var(--ink-soft);font-size:0.9rem;}
 .flip-back .mini-benefits{
   list-style:none;margin:0;padding:0;flex:1;
