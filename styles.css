@@ -397,49 +397,10 @@ header{
 }
 
 .prod-strip{position:relative;}
-.strip-bar{
-  display:flex;align-items:center;justify-content:space-between;gap:14px;
-  margin-bottom:16px;
-}
-.scroll-hint{
-  display:flex;align-items:center;gap:6px;
-  font-size:0.8rem;color:var(--ink-faint);
-}
-.scroll-hint svg{width:15px;height:15px;}
-.prod-nav{display:flex;gap:10px;flex:none;}
-.prod-nav button{
-  width:42px;height:42px;border-radius:50%;flex:none;
-  border:1px solid var(--border);background:var(--surface);
-  color:var(--plum-strong);cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:var(--shadow);
-  transition:background .15s ease, transform .15s ease, opacity .15s ease;
-}
-.prod-nav button svg{width:20px;height:20px;}
-.prod-nav button:hover{background:var(--plum-tint);}
-.prod-nav button:active{transform:scale(0.92);}
-.prod-nav button:disabled{opacity:0.35;cursor:default;transform:none;}
 .prod-grid{
-  display:flex;
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
   gap:26px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  padding:4px 4px 10px;
-  margin:0 -4px;
-  scrollbar-width:none;
-  -ms-overflow-style:none;
-}
-.prod-grid::-webkit-scrollbar{display:none;height:0;}
-.prod-grid .card{
-  flex:0 0 auto;
-  width:100%;
-  scroll-snap-align:start;
-}
-@media (min-width:680px){
-  .prod-grid .card{width:calc((100% - 26px) / 2);}
-}
-@media (min-width:1100px){
-  .prod-grid .card{width:calc((100% - 52px) / 3);}
 }
 .pic.pic-placeholder{
   display:flex;align-items:center;justify-content:center;
@@ -571,6 +532,7 @@ header{
 }
 .flip-back .mini-benefits li{display:flex;align-items:flex-start;gap:8px;font-size:0.86rem;color:var(--ink-soft);}
 .flip-back .mini-benefits svg{width:15px;height:15px;color:var(--green);flex:none;margin-top:2px;}
+.flip-note{font-size:0.72rem;font-style:italic;color:var(--ink-faint);line-height:1.35;}
 .btn-buy{
   width:100%;justify-content:center;
   background:linear-gradient(135deg, var(--gold) 0%, color-mix(in srgb, var(--gold) 65%, var(--plum)) 100%);
