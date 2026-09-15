@@ -745,4 +745,29 @@ footer{background:var(--footer-bg);color:var(--footer-ink);padding:56px 0 26px;}
   max-width:70ch;
 }
 
+/* ---------- Research note ---------- */
+.research{padding:10px 0 76px;}
+.research-card{
+  background:var(--surface);border:1px solid var(--border-soft);
+  border-radius:16px 16px 16px 4px;
+  padding:26px 28px;
+  margin-top:30px;
+  max-width:70ch;
+  box-shadow:var(--shadow);
+}
+.research-card p{color:var(--ink-soft);font-size:0.96rem;}
+.research-card p + p{margin-top:14px;}
+.research-caveat{
+  background:var(--gold-tint);border-radius:10px;
+  padding:12px 16px;font-size:0.85rem;color:var(--ink-soft);
+}
+.research-caveat strong{color:var(--plum-strong);font-family:"Work Sans",sans-serif;}
+.research-link{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:16px;font-weight:600;font-size:0.9rem;color:var(--plum);
+  text-decoration:none;border-bottom:1px solid transparent;
+}
+.research-link:hover{border-bottom-color:var(--plum);}
+.research-link svg{width:15px;height:15px;}
+
 :focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
