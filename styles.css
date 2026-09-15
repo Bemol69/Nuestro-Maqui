@@ -396,6 +396,21 @@ header{
   .leaf{animation:none;display:none;}
 }
 
+.flyer-banner{
+  display:block;
+  margin-bottom:30px;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.flyer-banner img{width:100%;height:auto;display:block;}
+.flyer-banner:hover{transform:translateY(-3px);box-shadow:0 26px 46px -20px rgba(28,62,32,0.45);}
+@media (prefers-reduced-motion: reduce){
+  .flyer-banner{transition:none;}
+  .flyer-banner:hover{transform:none;}
+}
+
 .prod-strip{position:relative;}
 .prod-grid{
   display:grid;
