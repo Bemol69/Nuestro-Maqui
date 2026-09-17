@@ -579,6 +579,26 @@ header{
 .info-item p{color:var(--ink-soft);font-size:0.92rem;margin-top:3px;}
 @media (min-width:900px){.contacto-grid{grid-template-columns:1fr 1fr;}}
 
+.ship-card{
+  background:linear-gradient(160deg, var(--surface) 0%, color-mix(in srgb, var(--green) 14%, var(--surface)) 100%);
+  border:1px solid var(--border-soft);
+  border-radius:20px 20px 20px 4px;
+  padding:32px 28px;
+  box-shadow:var(--shadow);
+  text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+}
+.ship-icon{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--green-tint);color:var(--green);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:8px;
+}
+.ship-icon svg{width:28px;height:28px;}
+.ship-card h3{font-size:1.15rem;font-weight:600;}
+.ship-card p{color:var(--ink-soft);font-size:0.92rem;max-width:38ch;margin-top:6px;}
+.ship-card .btn{margin-top:16px;}
+
 /* ---------- Footer ---------- */
 footer{background:var(--footer-bg);color:var(--footer-ink);padding:56px 0 26px;}
 .foot-grid{display:grid;gap:34px;}
