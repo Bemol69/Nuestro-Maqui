@@ -580,24 +580,45 @@ header{
 @media (min-width:900px){.contacto-grid{grid-template-columns:1fr 1fr;}}
 
 .ship-card{
+  position:relative;
   background:linear-gradient(160deg, var(--surface) 0%, color-mix(in srgb, var(--green) 14%, var(--surface)) 100%);
   border:1px solid var(--border-soft);
   border-radius:20px 20px 20px 4px;
-  padding:32px 28px;
+  padding:30px 28px;
   box-shadow:var(--shadow);
-  text-align:center;
-  display:flex;flex-direction:column;align-items:center;gap:6px;
+  display:flex;align-items:center;gap:22px;
+  overflow:hidden;
 }
-.ship-icon{
-  width:56px;height:56px;border-radius:50%;
-  background:var(--green-tint);color:var(--green);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:8px;
+.ship-visual{flex:none;width:84px;}
+.ship-visual svg{width:100%;height:auto;display:block;}
+.ship-leaf{
+  fill:color-mix(in srgb, var(--green) 22%, var(--surface));
+  stroke:var(--green);stroke-width:2.5;
 }
-.ship-icon svg{width:28px;height:28px;}
-.ship-card h3{font-size:1.15rem;font-weight:600;}
-.ship-card p{color:var(--ink-soft);font-size:0.92rem;max-width:38ch;margin-top:6px;}
-.ship-card .btn{margin-top:16px;}
+.ship-route{stroke:var(--gold);stroke-width:2.5;stroke-dasharray:1 11;stroke-linecap:round;}
+.ship-pin{fill:var(--surface);stroke:var(--gold);stroke-width:3;}
+.ship-pin-end{fill:var(--gold);stroke:var(--surface);stroke-width:3;}
+@media (prefers-reduced-motion: no-preference){
+  .ship-pin-end{animation:shipPulse 2.2s ease-in-out infinite;transform-origin:70px 268px;}
+}
+@keyframes shipPulse{0%,100%{opacity:1;}50%{opacity:0.55;}}
+.ship-content{flex:1;min-width:0;}
+.ship-content h3{font-size:1.18rem;font-weight:600;}
+.ship-content p{color:var(--ink-soft);font-size:0.92rem;margin-top:8px;max-width:44ch;}
+.ship-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.ship-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 12px;border-radius:100px;
+  font-size:0.78rem;font-weight:600;color:var(--ink-soft);
+  background:var(--surface);border:1px solid var(--border-soft);
+}
+.ship-tag svg{width:14px;height:14px;color:var(--green);flex:none;}
+.ship-card .btn{margin-top:18px;}
+@media (max-width:560px){
+  .ship-card{flex-direction:column;text-align:center;}
+  .ship-content p{max-width:none;}
+  .ship-tags{justify-content:center;}
+}
 
 /* ---------- Footer ---------- */
 footer{background:var(--footer-bg);color:var(--footer-ink);padding:56px 0 26px;}
