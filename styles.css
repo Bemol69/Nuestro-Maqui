@@ -811,4 +811,17 @@ footer{background:var(--footer-bg);color:var(--footer-ink);padding:56px 0 26px;}
 .research-link:hover{border-bottom-color:var(--plum);}
 .research-link svg{width:15px;height:15px;}
 
+/* ---------- Related products ---------- */
+.related{padding:10px 0 76px;}
+.related-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;}
+.related-link{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 22px;border-radius:100px;
+  background:var(--surface);border:1px solid var(--border-soft);
+  font-weight:600;font-size:0.94rem;color:var(--plum-strong);
+  text-decoration:none;box-shadow:var(--shadow);
+  transition:transform .15s ease, background .15s ease;
+}
+.related-link:hover{transform:translateY(-2px);background:var(--plum-tint);}
+
 :focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
