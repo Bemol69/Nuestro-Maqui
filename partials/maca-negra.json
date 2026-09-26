@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Raíz andina",
+  "banner_bg": "img/maca-negra.jpg",
+  "lead": "La variedad de maca más apreciada tradicionalmente por su aporte a la energía y la claridad mental. 100% natural.",
+  "benefits_titulo": "Beneficios de la maca negra",
+  "benefits": [
+    { "titulo": "Energizante natural.", "texto": "Ayuda a reducir la sensación de fatiga." },
+    { "titulo": "Memoria y enfoque.", "texto": "Tradicionalmente usada como apoyo a la claridad mental." },
+    { "titulo": "Bienestar reproductivo.", "texto": "Usada tradicionalmente como apoyo a la función reproductiva masculina." },
+    { "titulo": "Equilibrio general.", "texto": "Tradicionalmente asociada al bienestar frente al estrés diario." },
+    { "titulo": "100% natural.", "texto": "Raíz seleccionada por su calidad y pureza." }
+  ],
+  "research_titulo": "Lo que dice la ciencia sobre la maca negra",
+  "research_parrafo": "Investigadores de la Universidad Peruana Cayetano Heredia evaluaron un extracto atomizado de maca negra en ratones, usando pruebas de memoria espacial (laberinto acuático de Morris). La maca negra mostró el mejor desempeño en aprendizaje espacial frente a otras variedades. Estudios del mismo grupo también encontraron mejoras en el conteo y la motilidad espermática en modelos animales.",
+  "research_caveat": "Son estudios en animales (ratones), no en personas. No es un tratamiento aprobado ni reemplaza indicación médica; consulta a tu médico si tienes una condición de salud.",
+  "research_link_url": "https://repositorio.upch.edu.pe/entities/publication/2ddf2963-4d8e-481c-a5d4-7e80ff21c2cc",
+  "research_link_texto": "Leer el estudio en el repositorio UPCH",
+  "related": ["maca-roja", "polen-de-abeja"]
+}

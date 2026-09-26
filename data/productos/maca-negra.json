@@ -1,0 +1,17 @@
+{
+  "nombre": "Maca negra",
+  "resumen": "Tradicionalmente usada para la memoria, la claridad mental y la energía.",
+  "formatos": ["120 grs"],
+  "foto": "img/producto-maca-negra.webp",
+  "foto_cutout": "",
+  "beneficios": [
+    "Energizante natural, reduce la fatiga",
+    "Ayuda a mejorar la memoria, el enfoque y la claridad mental",
+    "Destaca por apoyar el deseo sexual y mejorar la calidad y producción de espermatozoides en hombres",
+    "Favorece el equilibrio general del organismo ante situaciones de estrés diario"
+  ],
+  "etiqueta": "",
+  "agotado": false,
+  "visible": true,
+  "orden": 6
+}

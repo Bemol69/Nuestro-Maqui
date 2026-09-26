@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Producto de la colmena",
+  "banner_bg": "img/polen.jpg",
+  "lead": "Gránulos recolectados por las abejas, con una composición nutricional excepcionalmente completa: aminoácidos, vitaminas, minerales y proteína natural. 100% natural.",
+  "benefits_titulo": "Beneficios del polen de abeja",
+  "benefits": [
+    { "titulo": "Alto contenido proteico.", "texto": "Entre 25% y 35% de proteína natural, según variedad y origen floral." },
+    { "titulo": "Rico en aminoácidos esenciales.", "texto": "Aporta los bloques básicos que el cuerpo necesita." },
+    { "titulo": "Vitaminas y minerales.", "texto": "Fuente natural de micronutrientes." },
+    { "titulo": "Energizante natural.", "texto": "Usado tradicionalmente para combatir el cansancio." },
+    { "titulo": "100% natural.", "texto": "Sin procesos industriales agresivos." }
+  ],
+  "research_titulo": "Lo que dice la ciencia sobre el polen",
+  "research_parrafo": "Extractos estandarizados de polen (como Cernilton, usado en estudios internacionales) han sido evaluados en ensayos clínicos aleatorizados, doble ciego y controlados con placebo para el bienestar prostático, incluyendo un estudio multicéntrico de fase 3 en hombres con prostatitis crónica y síndrome de dolor pélvico. Una revisión de la biblioteca Cochrane también analizó su uso en hiperplasia benigna de próstata.",
+  "research_caveat": "Estos estudios usaron un extracto de polen estandarizado y purificado (no necesariamente idéntico al polen de abeja crudo de este producto). No es un tratamiento aprobado ni reemplaza indicación médica; consulta a tu médico si tienes una condición de salud.",
+  "research_link_url": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD001042.pub2/full/es",
+  "research_link_texto": "Leer la revisión en Cochrane Library",
+  "related": ["maca-roja", "maqui-deshidratado"]
+}

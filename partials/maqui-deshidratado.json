@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Fruto silvestre",
+  "banner_bg": "img/maqui.jpg",
+  "lead": "El fruto del maquial, reconocido tradicionalmente por su altísimo contenido de antioxidantes. Lo deshidratamos con cuidado para conservar su sabor y sus propiedades, 100% natural y sin aditivos.",
+  "benefits_titulo": "Beneficios del maqui",
+  "benefits": [
+    { "titulo": "Alto contenido de antioxidantes.", "texto": "Rico en antocianinas, los compuestos responsables de su color morado intenso." },
+    { "titulo": "Aporte de vitamina C.", "texto": "Contribuye como fuente natural de vitamina C dentro de una alimentación variada." },
+    { "titulo": "Fuente de fibra dietética.", "texto": "Aporta fibra natural a tu alimentación diaria." },
+    { "titulo": "Uso tradicional.", "texto": "Consumido tradicionalmente por pueblos originarios como parte de su alimentación." },
+    { "titulo": "100% natural.", "texto": "Sin aditivos ni conservantes artificiales." }
+  ],
+  "research_titulo": "Lo que dice la ciencia sobre el maqui",
+  "research_parrafo": "Javier Mena, bioquímico y Doctor en Biotecnología de la Universidad de Santiago de Chile (USACH), estudió en su tesis doctoral (2020, guiada por el Dr. Pedro Orihuela) el efecto de un extracto de maqui sobre células de cáncer de endometrio en laboratorio. En el cultivo celular, el extracto eliminó cerca del 80% de las células cancerígenas, un efecto comparable al del paclitaxel, un fármaco usado en quimioterapia.",
+  "research_caveat": "Se trata de un estudio de laboratorio (in vitro, en células, no en personas). No es un tratamiento aprobado ni reemplaza la quimioterapia u otro tratamiento médico. Se comparte como información de contexto científico sobre la fruta, no como una promesa sobre este producto.",
+  "research_link_url": "https://www.usach.cl/news/estudiante-doctorado-del-plantel-trabaja-tratamiento-contra-cancer-partir-del-maqui",
+  "research_link_texto": "Leer la nota completa en USACH.cl",
+  "related": ["cardo-mariano", "polen-de-abeja"]
+}

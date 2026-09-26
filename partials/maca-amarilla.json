@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Raíz andina",
+  "banner_bg": "img/maca-amarilla.jpg",
+  "lead": "La variedad más cultivada de maca, molida en polvo fino. Rica en aminoácidos, vitaminas y minerales. 100% natural.",
+  "benefits_titulo": "Beneficios de la maca amarilla",
+  "benefits": [
+    { "titulo": "Reduce la fatiga.", "texto": "Aporta energía para el bienestar físico y mental." },
+    { "titulo": "Apoyo al ánimo.", "texto": "Tradicionalmente usada para acompañar momentos de estrés." },
+    { "titulo": "Bienestar reproductivo.", "texto": "Usada tradicionalmente como apoyo a la fertilidad, en hombres y mujeres." },
+    { "titulo": "Vitaminas y minerales.", "texto": "Aporta aminoácidos, vitaminas del complejo B, hierro, calcio y magnesio." },
+    { "titulo": "100% natural.", "texto": "Raíz seleccionada por su calidad y pureza." }
+  ],
+  "research_titulo": "Lo que dice la ciencia sobre la maca",
+  "research_parrafo": "Un ensayo clínico aleatorizado, doble ciego y controlado con placebo (Gonzales et al., revista <em>Andrologia</em>, 2002) evaluó el efecto de la maca en hombres sanos durante 12 semanas: se observó un aumento del deseo sexual a partir de la octava semana, sin cambios en los niveles de testosterona ni estradiol en sangre — es decir, un efecto que no depende de alterar las hormonas.",
+  "research_caveat": "Este es uno de los pocos estudios de maca realizado directamente en personas. No es un tratamiento aprobado ni reemplaza indicación médica; consulta a tu médico si tienes una condición de salud.",
+  "research_link_url": "https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1439-0272.2002.00519.x",
+  "research_link_texto": "Leer el estudio en Andrologia",
+  "related": ["maca-roja", "maca-negra"]
+}

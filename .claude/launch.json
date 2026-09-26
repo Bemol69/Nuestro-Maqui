@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "hierbas",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "5601", "--directory", "dist"],
+      "port": 5601
+    }
+  ]
+}

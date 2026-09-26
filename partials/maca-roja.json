@@ -1,0 +1,20 @@
+{
+  "eyebrow": "Raíz andina",
+  "banner_bg": "img/maca-roja.jpg",
+  "lead": "Raíz cultivada en los Andes, tradicionalmente usada como aporte al bienestar óseo, hormonal y reproductivo. 100% natural.",
+  "benefits_titulo": "Beneficios de la maca roja",
+  "benefits": [
+    { "titulo": "Salud ósea.", "texto": "Tradicionalmente asociada a la prevención del deterioro óseo." },
+    { "titulo": "Bienestar en la menopausia.", "texto": "Usada tradicionalmente para acompañar los cambios propios de esta etapa." },
+    { "titulo": "Bienestar de la próstata.", "texto": "Tradicionalmente utilizada como apoyo al bienestar prostático en hombres." },
+    { "titulo": "Reduce el cansancio.", "texto": "Aporta energía natural para el día a día." },
+    { "titulo": "Bienestar reproductivo.", "texto": "Usada tradicionalmente como apoyo a la función reproductiva." },
+    { "titulo": "100% natural.", "texto": "Raíz seleccionada por su calidad y pureza." }
+  ],
+  "research_titulo": "Lo que dice la ciencia sobre la maca roja",
+  "research_parrafo": "El investigador Gustavo F. Gonzales y su equipo de la Universidad Peruana Cayetano Heredia han publicado varios estudios sobre la maca roja y la próstata. En ratas con hiperplasia prostática inducida por testosterona, la maca roja redujo el tamaño y peso de la próstata, un efecto no observado con otras variedades de maca (Andrologia, 2008 y 2012).",
+  "research_caveat": "Son estudios en animales (ratas), no en personas. No es un tratamiento aprobado para la próstata ni reemplaza indicación médica; consulta a tu médico si tienes una condición de salud.",
+  "research_link_url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1439-0272.2008.00834.x",
+  "research_link_texto": "Leer el estudio en Andrologia",
+  "related": ["maca-negra", "maca-amarilla"]
+}

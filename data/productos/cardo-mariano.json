@@ -1,0 +1,20 @@
+{
+  "nombre": "Cardo mariano",
+  "resumen": "Contiene silimarina, tradicionalmente usado para apoyar el bienestar hepático y digestivo.",
+  "formatos": ["140 grs"],
+  "foto": "img/producto-cardo-mariano.webp",
+  "foto_cutout": "",
+  "beneficios": [
+    "Protege el hígado",
+    "Regenera las células hepáticas",
+    "Desintoxica el organismo",
+    "Mejora la digestión",
+    "Disminuye la acidez",
+    "Propiedades antiinflamatorias",
+    "Baja el colesterol"
+  ],
+  "etiqueta": "",
+  "agotado": false,
+  "visible": true,
+  "orden": 2
+}

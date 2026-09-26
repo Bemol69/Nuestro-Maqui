@@ -1,0 +1,17 @@
+{
+  "nombre": "Maca amarilla en polvo",
+  "resumen": "Aminoácidos, vitaminas del complejo B, hierro, calcio y magnesio.",
+  "formatos": ["1 kilo"],
+  "foto": "img/maca-amarilla-sinfondo.webp",
+  "foto_cutout": "img/maca-amarilla-sinfondo.webp",
+  "beneficios": [
+    "Reduce la fatiga física y mental",
+    "Disminuye el estrés, la ansiedad y apoya la estabilidad del estado de ánimo",
+    "Contribuye a mejorar la fertilidad y aumenta el deseo sexual tanto en hombres como en mujeres",
+    "Aporta aminoácidos, vitaminas del complejo B, hierro, calcio y magnesio"
+  ],
+  "etiqueta": "",
+  "agotado": false,
+  "visible": true,
+  "orden": 5
+}

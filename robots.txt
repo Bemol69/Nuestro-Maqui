@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://hierbasmedicinalesrengo.cl/sitemap.xml

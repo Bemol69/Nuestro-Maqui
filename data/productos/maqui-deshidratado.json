@@ -1,0 +1,19 @@
+{
+  "nombre": "Maqui deshidratado",
+  "resumen": "Fruto silvestre 100% natural, rico en antioxidantes (antocianinas), vitamina C y fibra.",
+  "formatos": ["100 grs", "200 grs", "400 grs"],
+  "foto": "img/producto-maqui.webp",
+  "foto_cutout": "img/maqui-sinfondo.webp",
+  "beneficios": [
+    "Ayuda a prevenir el cáncer",
+    "Regula los niveles de azúcar en la sangre (Diabetes)",
+    "Retarda el envejecimiento",
+    "Protege sistema cardiovascular",
+    "Reduce los niveles de colesterol",
+    "Propiedades antiinflamatorias"
+  ],
+  "etiqueta": "",
+  "agotado": false,
+  "visible": true,
+  "orden": 1
+}

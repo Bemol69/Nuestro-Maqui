@@ -1,0 +1,27 @@
+{
+  "nombre": "Polen de abeja",
+  "resumen": "Rico en aminoácidos, vitaminas, minerales y proteína natural.",
+  "formatos": ["120 grs"],
+  "foto": "img/producto-polen.webp",
+  "foto_cutout": "",
+  "beneficios": [
+    "Energizante natural",
+    "Desinflama la próstata",
+    "Antioxidante",
+    "Vitaminas y minerales",
+    "Posee aminoácidos esenciales",
+    "Alto porcentaje de proteínas (25-35%)",
+    "Antianémico",
+    "Aumenta glóbulos rojos y plaquetas",
+    "Potenciador sexual",
+    "Reduce fatiga",
+    "Reduce estrés",
+    "Disminuye colesterol",
+    "Mejora la visión",
+    "Mejora la flora microbiana (colon)"
+  ],
+  "etiqueta": "",
+  "agotado": false,
+  "visible": true,
+  "orden": 3
+}

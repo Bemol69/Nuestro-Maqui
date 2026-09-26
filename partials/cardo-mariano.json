@@ -1,0 +1,18 @@
+{
+  "eyebrow": "Planta medicinal",
+  "banner_bg": "img/cardo-mariano.jpg",
+  "lead": "Planta reconocida desde hace siglos por su contenido de silimarina, un compuesto vegetal ampliamente estudiado por sus propiedades antioxidantes. 100% natural.",
+  "benefits_titulo": "Beneficios del cardo mariano",
+  "benefits": [
+    { "titulo": "Contiene silimarina.", "texto": "Compuesto vegetal con reconocidas propiedades antioxidantes." },
+    { "titulo": "Bienestar hepático.", "texto": "Tradicionalmente utilizado como apoyo al funcionamiento del hígado." },
+    { "titulo": "Apoyo digestivo.", "texto": "Usado tradicionalmente para contribuir a una buena digestión." },
+    { "titulo": "100% natural.", "texto": "Planta seleccionada por su calidad y pureza." }
+  ],
+  "research_titulo": "Lo que dice la ciencia sobre el cardo mariano",
+  "research_parrafo": "La silimarina, el compuesto activo del cardo mariano, es uno de los extractos vegetales más estudiados a nivel hepático. Un ensayo clínico aleatorizado, doble ciego y controlado con placebo evaluó su efecto en pacientes con hígado graso no alcohólico: con una dosis de 420 mg diarios durante 12 semanas, se observó una reducción de las enzimas hepáticas ALT y AST.",
+  "research_caveat": "Estos resultados corresponden a un extracto estandarizado de silimarina, no necesariamente a la misma concentración presente en este producto. No es un tratamiento aprobado para enfermedades hepáticas ni reemplaza indicación médica; consulta a tu médico si tienes una condición de salud.",
+  "research_link_url": "https://askthescientists.com/es/silymarin-milk-thistle/",
+  "research_link_texto": "Leer más sobre la evidencia científica",
+  "related": ["maqui-deshidratado", "maca-amarilla"]
+}

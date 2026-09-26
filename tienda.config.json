@@ -1,0 +1,25 @@
+{
+  "_ayuda": "Datos fijos del sitio (los edita el desarrollador). Contacto y textos de portada van en data/ajustes.json, editable desde /admin.",
+  "nombre": "Hierbas Medicinales Rengo",
+  "marca_a": "Hierbas Medicinales",
+  "marca_b": "Rengo",
+  "rubro": "Hierbas medicinales naturales",
+  "schema_tipo": "LocalBusiness",
+  "seo_titulo": "Hierbas medicinales naturales en Rengo | Hierbas Medicinales Rengo",
+  "seo_descripcion": "Maqui, cardo mariano, polen de abeja y maca (roja, amarilla y negra) 100% naturales. Envíos a todo Chile, consulta por WhatsApp.",
+  "github_repo": "Bemol69/Nuestro-Maqui",
+  "site_url": "https://hierbasmedicinalesrengo.cl",
+  "google_verificacion": "",
+  "fuentes": { "titulos": "Fraunces", "texto": "Work Sans" },
+  "colores": {
+    "fondo": "#FBF5EA",
+    "fondo_alt": "#F3EBD9",
+    "primario": "#2E6B34",
+    "primario_oscuro": "#1C3E20",
+    "primario_claro": "#E6EFE3",
+    "dorado": "#B8862E",
+    "dorado_claro": "#F3E6C8",
+    "tinta": "#1C3E20",
+    "tinta_suave": "#4B5D49"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "nombre": "Maca roja",
+  "resumen": "Tradicionalmente usada para la salud ósea, el bienestar hormonal y el deseo sexual.",
+  "formatos": ["120 grs"],
+  "foto": "img/producto-maca-roja.webp",
+  "foto_cutout": "",
+  "beneficios": [
+    "Salud ósea, ayuda a prevenir y tratar la Osteoporosis",
+    "Alivia los sofocos y cambios de humor durante la menopausia",
+    "Ayuda a reducir el tamaño y la inflamación de la próstata en los hombres sin alterar la testosterona",
+    "Disminuye el cansancio físico mental",
+    "Mejora la función reproductora y aumenta el deseo sexual"
+  ],
+  "etiqueta": "",
+  "agotado": false,
+  "visible": true,
+  "orden": 4
+}

@@ -1,0 +1,133 @@
+# Configuración del panel /admin (Sveltia CMS)
+# Cada cambio que se guarda aquí crea un commit en GitHub.
+# Vercel arma la web (scripts/build.mjs) y la publica en ~30 segundos.
+
+backend:
+  name: github
+  repo: %%GITHUB_REPO%%
+  branch: main
+  commit_messages:
+    create: "Catálogo: crea {{collection}} «{{slug}}»"
+    update: "Catálogo: actualiza {{collection}} «{{slug}}»"
+    delete: "Catálogo: elimina {{collection}} «{{slug}}»"
+    uploadMedia: "Catálogo: sube foto {{path}}"
+    deleteMedia: "Catálogo: elimina foto {{path}}"
+
+site_url: %%SITE_URL%%
+display_url: %%SITE_URL%%
+logo_url: ../img/logo.webp
+
+media_folder: img/productos
+public_folder: /img/productos
+
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+media_libraries:
+  default:
+    config:
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 1400
+          height: 1400
+
+collections:
+  # ---------- PRODUCTOS ----------
+  - name: productos
+    label: Productos
+    label_singular: producto
+    description: "Los 6 productos del catálogo. El nombre del archivo no cambia aunque edites el nombre del producto, así no se rompen los enlaces ni lo que ya está indexado en Google."
+    icon: storefront
+    folder: data/productos
+    format: json
+    create: false
+    delete: false
+    identifier_field: nombre
+    summary: "{{nombre}}"
+    sortable_fields:
+      fields: [orden, nombre]
+      default:
+        field: orden
+        direction: ascending
+    fields:
+      - name: nombre
+        label: Nombre del producto
+        widget: string
+
+      - name: resumen
+        label: Resumen corto
+        widget: text
+        hint: "1 línea. Aparece en Google y al compartir el link (WhatsApp, Facebook)."
+
+      - name: foto
+        label: Foto principal
+        widget: image
+        hint: "La foto que se ve en la tarjeta del catálogo y en la página del producto."
+
+      - name: formatos
+        label: Formatos disponibles
+        label_singular: formato
+        widget: list
+        field: { name: formato, label: Formato, widget: string, hint: "Ej: 120 grs" }
+        hint: "Un formato por línea. Ej: 100 grs / 200 grs / 400 grs"
+
+      - name: beneficios
+        label: Beneficios (lista rápida)
+        label_singular: beneficio
+        widget: list
+        field: { name: beneficio, label: Beneficio, widget: string }
+        hint: "Aparecen como lista al reverso de la tarjeta del catálogo. Recuerda: en Chile hay regulaciones sobre afirmaciones de salud en productos (ISP/SEREMI) — revisa la redacción con cuidado."
+
+      - name: etiqueta
+        label: Etiqueta
+        widget: string
+        required: false
+        hint: "Opcional. Aparece sobre la foto. Ej: Nuevo, Más vendido."
+
+      - name: agotado
+        label: Agotado
+        widget: boolean
+        default: false
+        hint: "Si está activado, se muestra 'Consultar stock' en vez del botón de comprar."
+
+      - name: visible
+        label: Mostrar en la web
+        widget: boolean
+        default: true
+        hint: "Desactívalo para ocultar el producto del catálogo sin borrarlo."
+
+      - name: orden
+        label: Posición
+        widget: number
+        value_type: int
+        default: 100
+        hint: "Los números más bajos aparecen primero en el catálogo."
+
+  # ---------- AJUSTES (contacto y portada) ----------
+  - name: ajustes
+    label: Ajustes de la tienda
+    icon: settings
+    files:
+      - name: ajustes
+        label: Contacto y portada
+        file: data/ajustes.json
+        fields:
+          - name: whatsapp
+            label: WhatsApp para pedidos
+            widget: string
+            pattern: ['^\+?[0-9 ]{10,17}$', "Formato internacional, ej: 56912345678"]
+            hint: "Con código de país y sin +. Ej: 56912345678"
+          - { name: instagram, label: Usuario de Instagram, widget: string, required: false, hint: "Sin @. Déjalo vacío para ocultarlo." }
+          - { name: tiktok, label: Usuario de TikTok, widget: string, required: false, hint: "Sin @. Déjalo vacío para ocultarlo." }
+          - { name: email, label: Correo, widget: string, required: false }
+          - { name: facebook, label: Link de la página de Facebook, widget: string, required: false }
+          - { name: ciudad, label: Ciudad, widget: string }
+          - { name: region, label: Región, widget: string, required: false }
+          - { name: envios, label: Texto de envíos, widget: string, required: false, hint: "Ej: Envíos a todo Chile" }
+          - { name: hero_titulo, label: Título de la portada (parte 1), widget: string }
+          - { name: hero_destacado, label: "Título de la portada (parte destacada)", widget: string, required: false, hint: "Aparece en cursiva y color, después del título." }
+          - { name: hero_bajada, label: Texto bajo el título, widget: text }
