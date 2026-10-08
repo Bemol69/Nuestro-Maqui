@@ -139,7 +139,8 @@ section{padding:76px 0}
 .info-item{display:flex; gap:16px; align-items:flex-start; background:#fff; padding:18px 20px; border-radius:16px; box-shadow:0 10px 24px -18px rgba(28,62,32,.2)}
 .info-item svg{width:24px; height:24px; color:var(--verde); flex:none; margin-top:2px}
 .info-item h4{margin:0 0 2px; font-size:.95rem; font-family:var(--font-text); font-weight:700}
-.info-item p{margin:0; color:var(--tinta-suave)}
+.info-item > div{min-width:0}
+.info-item p{margin:0; color:var(--tinta-suave); overflow-wrap:anywhere}
 .ship-card{background:linear-gradient(160deg,var(--verde-oscuro),var(--verde)); color:#fff; border-radius:28px; padding:36px; display:flex; gap:28px; align-items:center; height:100%; box-shadow:var(--sombra)}
 .ship-visual{width:90px; flex:none}
 .ship-visual svg{width:100%; height:auto}
@@ -168,6 +169,13 @@ footer{background:var(--verde-oscuro); color:rgba(255,255,255,.85); padding:64px
 .foot-social{display:flex; gap:12px}
 .foot-social a{width:38px; height:38px; border-radius:50%; border:1px solid rgba(255,255,255,.3); display:flex; align-items:center; justify-content:center}
 .foot-social svg{width:18px; height:18px}
+.foot-grid > *{min-width:0}
+.foot-col a{overflow-wrap:anywhere}
+@media (max-width:860px){.foot-grid{grid-template-columns:1fr 1fr; gap:28px}}
+@media (max-width:560px){
+  .foot-grid{grid-template-columns:1fr; gap:24px}
+  footer{padding-top:48px}
+}
 .foot-bottom{padding:22px 24px; font-size:.8rem; color:rgba(255,255,255,.55); text-align:center}
 
 /* ---------- WhatsApp flotante + música ---------- */
@@ -210,7 +218,8 @@ footer{background:var(--verde-oscuro); color:rgba(255,255,255,.85); padding:64px
 .product-banner-copy .qty-label{color:rgba(255,255,255,.7)}
 .product-cta{margin-top:18px}
 @media (max-width:760px){
-  .product-banner{min-height:auto; padding-bottom:0}
+  .product-banner{min-height:auto; padding-bottom:0; flex-direction:column; align-items:stretch}
+  .product-banner-copy{max-width:none}
   .product-banner-copy{padding:36px 24px}
   .product-banner-cutout{position:static; width:60%; margin:0 auto 8px; display:block}
 }
@@ -240,3 +249,23 @@ footer{background:var(--verde-oscuro); color:rgba(255,255,255,.85); padding:64px
 .related-card img{width:64px; height:64px; border-radius:12px; object-fit:cover; flex:none}
 .related-card span{display:flex; align-items:center; gap:8px; font-weight:700; font-family:var(--font-display); font-size:1.05rem}
 .related-card svg{width:16px; height:16px; color:var(--verde)}
+
+/* ---------- Ajustes móviles ---------- */
+@media (max-width:560px){
+  section{padding:52px 0}
+  .product-hero{padding-top:18px}
+  .back-bar{padding-top:16px}
+  .product-banner{border-radius:24px}
+  .product-banner-overlay,
+  .product-banner.no-cutout .product-banner-overlay{background:linear-gradient(180deg, rgba(28,62,32,.55) 0%, rgba(28,62,32,.82) 45%, rgba(28,62,32,.9) 100%)}
+  .product-banner-cutout{width:58%; max-width:230px; margin:28px auto 0}
+  .product-banner-copy{padding:28px 22px 32px}
+  .product-banner-copy .product-cta .btn{width:100%; justify-content:center}
+  .sec-head{margin-bottom:30px}
+  .benefits-grid{gap:18px}
+  .research-card{padding:44px 22px 28px; border-radius:22px}
+  .research-card p{font-size:1.05rem}
+  .quote-mark{left:22px}
+  .related-card{padding:12px}
+  .foot-bottom{padding-bottom:96px}
+}
