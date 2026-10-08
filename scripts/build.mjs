@@ -147,7 +147,9 @@ function waHref(p, formato) {
 
 function productCard(p) {
   const benMostrar = p.beneficios.slice(0, 3);
-  const extra = p.beneficios.length - benMostrar.length;
+  const resto = p.beneficios.slice(3);
+  const extra = resto.length;
+  const listId = `ben-${p.slug}`;
   return `
         <article class="product-card reveal">
           <div class="product-card__media">
@@ -158,10 +160,11 @@ function productCard(p) {
             <span class="product-card__eyebrow">${esc(p.resumen)}</span>
             <h3>${esc(p.nombre)}</h3>
             ${formatChips(p, true).replace('qty-row', 'qty-row qty-row--card')}
-            <ul class="product-card__benefits">
+            <ul class="product-card__benefits" id="${listId}">
               ${benMostrar.map((b) => `<li>${checkIcon}${esc(b)}</li>`).join('')}
-              ${extra > 0 ? `<li class="more">+ ${extra} beneficio${extra === 1 ? '' : 's'} más</li>` : ''}
+              ${resto.map((b) => `<li class="extra" hidden>${checkIcon}${esc(b)}</li>`).join('')}
             </ul>
+            ${extra > 0 ? `<button type="button" class="more-toggle" aria-expanded="false" aria-controls="${listId}" data-more="${extra}">+ ${extra} beneficio${extra === 1 ? '' : 's'} más</button>` : ''}
             <div class="product-card__actions" data-wa-card data-wa-product="${esc(p.nombre)}" data-wa-number="${T.whatsapp}">
               ${p.agotado
                 ? `<a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="${esc(waHref(p, ''))}">Consultar stock</a>`
@@ -178,9 +181,9 @@ function productCard(p) {
 function careCard(p) {
   return `
         <article class="care-card reveal">
-          <a class="care-card__media" href="${p.slug}.html" tabindex="-1" aria-hidden="true">
+          <a class="care-card__media${p.foto_cutout ? ' is-cutout' : ''}" href="${p.slug}.html" tabindex="-1" aria-hidden="true">
             ${p.etiqueta ? `<span class="badge">${esc(p.etiqueta)}</span>` : ''}
-            <img src="${esc(p.foto)}" alt="${esc(p.nombre)} ${esc(p.formatos.join('/'))} — Hierbas Medicinales Rengo" loading="lazy">
+            <img src="${esc(p.foto_cutout || p.foto)}" alt="${esc(p.nombre)} ${esc(p.formatos.join('/'))} — Hierbas Medicinales Rengo" loading="lazy">
           </a>
           <div class="care-card__body">
             <span class="eyebrow">${esc(p.formatos.join(' · '))}</span>

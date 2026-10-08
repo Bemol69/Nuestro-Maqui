@@ -153,6 +153,18 @@
     updateLinks();
   });
 
+  document.querySelectorAll('.more-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var list = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!list) return;
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      var n = parseInt(btn.getAttribute('data-more'), 10) || 0;
+      list.querySelectorAll('li.extra').forEach(function(li){ li.hidden = open; });
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      btn.textContent = open ? '+ ' + n + (n === 1 ? ' beneficio más' : ' beneficios más') : 'Ver menos';
+    });
+  });
+
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(e){

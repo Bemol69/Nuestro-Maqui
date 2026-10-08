@@ -120,7 +120,14 @@ section{padding:76px 0}
 .product-card__benefits{list-style:none; margin:6px 0; padding:0; display:flex; flex-direction:column; gap:6px; font-size:.85rem; color:var(--tinta-suave)}
 .product-card__benefits li{display:flex; gap:8px; align-items:flex-start}
 .product-card__benefits svg{width:15px; height:15px; flex:none; margin-top:3px; color:var(--verde)}
-.product-card__benefits li.more{color:var(--dorado); font-weight:700; padding-left:23px}
+.product-card__benefits li[hidden]{display:none}
+.product-card__benefits li.extra{animation:benIn .25s ease}
+@keyframes benIn{from{opacity:0; transform:translateY(-4px)}to{opacity:1; transform:none}}
+.more-toggle{align-self:flex-start; background:none; border:0; padding:2px 0 2px 23px; margin:0 0 4px; font:inherit; font-size:.85rem; font-weight:700; color:var(--dorado); cursor:pointer; display:inline-flex; align-items:center; gap:6px}
+.more-toggle:hover{color:#9c7126}
+.more-toggle::after{content:""; width:7px; height:7px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg) translateY(-2px); transition:transform .2s ease}
+.more-toggle[aria-expanded="true"]::after{transform:rotate(-135deg) translate(-2px,0)}
+.more-toggle:focus-visible{outline:2px solid var(--verde); outline-offset:3px; border-radius:6px}
 .product-card__actions{margin-top:auto; padding-top:12px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
 .shelf-more{font-size:.85rem; font-weight:700; color:var(--verde); border-bottom:1.5px solid transparent}
 .shelf-more:hover{border-color:var(--verde)}
@@ -259,6 +266,8 @@ footer{background:var(--verde-oscuro); color:rgba(255,255,255,.85); padding:64px
 .care-card__media{position:relative; display:flex; align-items:center; justify-content:center; background:linear-gradient(160deg,var(--verde-claro),var(--crema-alt)); aspect-ratio:5/4; overflow:hidden}
 .care-card__media img{width:100%; height:100%; object-fit:cover; object-position:center 25%; transition:transform .5s ease}
 .care-card:hover .care-card__media img{transform:scale(1.04)}
+.care-card__media.is-cutout{aspect-ratio:1/1; padding:28px}
+.care-card__media.is-cutout img{object-fit:contain; filter:drop-shadow(0 22px 24px rgba(28,62,32,.28))}
 .care-card__media .badge{position:absolute; top:16px; left:16px; z-index:2}
 .care-card__body{padding:28px 30px 32px; display:flex; flex-direction:column; flex:1}
 .care-card__body h3{font-size:1.6rem; margin:.15em 0 .3em}
