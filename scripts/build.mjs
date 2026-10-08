@@ -66,6 +66,7 @@ const productosAll = readFolder('productos')
     foto_cutout: str(p.foto_cutout),
     formatos: Array.isArray(p.formatos) && p.formatos.length ? p.formatos.map(str).filter(Boolean) : ['Consultar'],
     beneficios: Array.isArray(p.beneficios) ? p.beneficios.map(str).filter(Boolean) : [],
+    categoria: str(p.categoria) === 'cuidado' ? 'cuidado' : 'hierbas',
     etiqueta: str(p.etiqueta),
     agotado: p.agotado === true,
     visible: p.visible !== false,
@@ -174,6 +175,28 @@ function productCard(p) {
         </article>`;
 }
 
+function careCard(p) {
+  return `
+        <article class="care-card reveal">
+          <a class="care-card__media" href="${p.slug}.html" tabindex="-1" aria-hidden="true">
+            ${p.etiqueta ? `<span class="badge">${esc(p.etiqueta)}</span>` : ''}
+            <img src="${esc(p.foto)}" alt="${esc(p.nombre)} ${esc(p.formatos.join('/'))} — Hierbas Medicinales Rengo" loading="lazy">
+          </a>
+          <div class="care-card__body">
+            <span class="eyebrow">${esc(p.formatos.join(' · '))}</span>
+            <h3>${esc(p.nombre)}</h3>
+            <p>${esc(p.resumen)}</p>
+            <ul class="care-card__list">
+              ${p.beneficios.slice(0, 3).map((b) => `<li>${checkIcon}${esc(b)}</li>`).join('')}
+            </ul>
+            <div class="care-card__actions">
+              <a class="btn btn-buy btn-sm js-buy" target="_blank" rel="noopener" href="${esc(waHref(p, p.formatos[0]))}">${p.agotado ? 'Consultar stock' : 'Consultar por WhatsApp'}</a>
+              <a class="shelf-more" href="${p.slug}.html">Ver detalles</a>
+            </div>
+          </div>
+        </article>`;
+}
+
 // ---------- 4. Página de inicio ----------
 function buildHome() {
   const seoTitulo = str(config.seo_titulo);
@@ -228,6 +251,18 @@ function buildHome() {
         <img src="img/flyer-productos.jpg" alt="Afiche de productos Hierbas Medicinales Rengo" loading="lazy">
       </a>
       <div class="product-grid">${productos.map(productCard).join('')}
+      </div>
+    </div>
+  </section>
+
+  <section class="cuidado" id="cuidado">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Cuidado de la piel</span>
+        <h2>Cuidados para tu piel, <em>todos los días</em></h2>
+        <p>Además de nuestras hierbas, ahora tenemos productos de cuidado personal para hidratar y refrescar tu piel. Consulta disponibilidad por WhatsApp.</p>
+      </div>
+      <div class="care-grid">${productos.filter((p) => p.categoria === 'cuidado').map(careCard).join('')}
       </div>
     </div>
   </section>
@@ -303,7 +338,7 @@ function buildHome() {
     TITLE: `${config.nombre} — ${config.rubro}`,
     SEO_DESCRIPCION: seoDescripcion,
     BRAND_HREF: '#top',
-    LINK_SOMOS: '#somos', LINK_PRODUCTOS: '#productos', LINK_CONTACTO: '#contacto',
+    LINK_SOMOS: '#somos', LINK_PRODUCTOS: '#productos', LINK_CUIDADO: '#cuidado', LINK_CONTACTO: '#contacto',
     WA_TEXT_DEFAULT: encodeURIComponent('Hola, quiero más información'),
   }, main, seoHead({ canonical, ogType: 'website', title: seoTitulo, description: seoDescripcion, image: ogImage, jsonLd }));
 
@@ -374,13 +409,15 @@ function relatedSection(partial) {
 
 function productBanner(p, partial) {
   const cutout = p.foto_cutout ? `<img class="product-banner-cutout" src="${esc(p.foto_cutout)}" alt="${esc(p.nombre)} ${esc(p.formatos.join('/'))} — Hierbas Medicinales Rengo">` : '';
+  const photo = !cutout && p.categoria === 'cuidado'
+    ? `<img class="product-banner-photo" src="${esc(p.foto)}" alt="${esc(p.nombre)} ${esc(p.formatos.join('/'))} — Hierbas Medicinales Rengo">` : '';
   return `
   <section class="product-hero">
     <div class="wrap">
       <div class="product-banner${cutout ? '' : ' no-cutout'}">
         <div class="product-banner-bg" style="background-image:url('${esc(partial.banner_bg)}')"></div>
         <div class="product-banner-overlay"></div>
-        ${cutout}
+        ${cutout}${photo}
         <div class="product-banner-copy">
           <span class="eyebrow">${esc(partial.eyebrow)}</span>
           <h1>${esc(p.nombre)}</h1>
@@ -429,7 +466,7 @@ function buildProducto(p) {
     TITLE: `${p.nombre} — Hierbas Medicinales Rengo`,
     SEO_DESCRIPCION: description,
     BRAND_HREF: 'index.html',
-    LINK_SOMOS: 'index.html#somos', LINK_PRODUCTOS: 'index.html#productos', LINK_CONTACTO: 'index.html#contacto',
+    LINK_SOMOS: 'index.html#somos', LINK_PRODUCTOS: 'index.html#productos', LINK_CUIDADO: 'index.html#cuidado', LINK_CONTACTO: 'index.html#contacto',
     WA_TEXT_DEFAULT: encodeURIComponent(`Hola, quiero consultar disponibilidad de ${p.nombre}`),
   }, main, seoHead({ canonical, ogType: 'product', title: `${p.nombre} — Hierbas Medicinales Rengo`, description, image: ogImage, jsonLd }));
 

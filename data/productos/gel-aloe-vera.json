@@ -1,0 +1,21 @@
+{
+  "nombre": "Gel refrescante de aloe vera",
+  "categoria": "cuidado",
+  "resumen": "Body gel Odeon Ice con aloe vera: textura fresca y ligera, sin parabenos ni siliconas.",
+  "formatos": [
+    "300 ml"
+  ],
+  "foto": "img/producto-gel-aloe.webp",
+  "foto_cutout": "",
+  "beneficios": [
+    "Sensación refrescante en la piel",
+    "Con aloe vera",
+    "Sin parabenos ni siliconas",
+    "Para todo tipo de piel",
+    "Ideal para piernas y pies después de la ducha"
+  ],
+  "etiqueta": "Nuevo",
+  "agotado": false,
+  "visible": true,
+  "orden": 8
+}

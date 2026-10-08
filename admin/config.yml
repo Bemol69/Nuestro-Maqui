@@ -40,7 +40,7 @@ collections:
   - name: productos
     label: Productos
     label_singular: producto
-    description: "Los 6 productos del catálogo. El nombre del archivo no cambia aunque edites el nombre del producto, así no se rompen los enlaces ni lo que ya está indexado en Google."
+    description: "Los productos del catálogo (hierbas y cuidado de la piel). El nombre del archivo no cambia aunque edites el nombre del producto, así no se rompen los enlaces ni lo que ya está indexado en Google."
     icon: storefront
     folder: data/productos
     format: json
@@ -57,6 +57,15 @@ collections:
       - name: nombre
         label: Nombre del producto
         widget: string
+
+      - name: categoria
+        label: Categoría
+        widget: select
+        options:
+          - { label: "Hierbas medicinales", value: hierbas }
+          - { label: "Cuidado de la piel", value: cuidado }
+        default: hierbas
+        hint: "Los de 'Cuidado de la piel' aparecen también en su propia sección de la portada."
 
       - name: resumen
         label: Resumen corto

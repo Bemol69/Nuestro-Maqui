@@ -207,6 +207,7 @@ footer{background:var(--verde-oscuro); color:rgba(255,255,255,.85); padding:64px
 .product-banner-overlay{position:absolute; inset:0; background:linear-gradient(100deg, rgba(28,62,32,.92) 0%, rgba(28,62,32,.78) 38%, rgba(28,62,32,.25) 68%, rgba(28,62,32,0) 100%)}
 .product-banner.no-cutout .product-banner-overlay{background:linear-gradient(100deg, rgba(28,62,32,.9) 0%, rgba(28,62,32,.6) 55%, rgba(28,62,32,.25) 100%)}
 .product-banner-cutout{position:absolute; right:4%; bottom:0; width:38%; max-width:340px; z-index:1; filter:drop-shadow(0 25px 30px rgba(0,0,0,.35))}
+.product-banner-photo{position:absolute; right:5%; top:50%; transform:translateY(-50%); width:34%; max-width:360px; z-index:1; border-radius:24px; border:6px solid #fff; box-shadow:0 28px 50px -20px rgba(0,0,0,.5)}
 .product-banner-copy{position:relative; z-index:2; padding:56px; max-width:560px; color:#fff}
 .product-banner-copy .eyebrow{color:var(--dorado-claro)}
 .product-banner-copy h1{color:#fff; font-size:clamp(2rem,4vw,3rem)}
@@ -222,6 +223,7 @@ footer{background:var(--verde-oscuro); color:rgba(255,255,255,.85); padding:64px
   .product-banner-copy{max-width:none}
   .product-banner-copy{padding:36px 24px}
   .product-banner-cutout{position:static; width:60%; margin:0 auto 8px; display:block}
+  .product-banner-photo{position:static; transform:none; width:72%; max-width:320px; margin:28px auto 0; display:block}
 }
 
 .benefits-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px 40px; margin-bottom:28px}
@@ -249,6 +251,24 @@ footer{background:var(--verde-oscuro); color:rgba(255,255,255,.85); padding:64px
 .related-card img{width:64px; height:64px; border-radius:12px; object-fit:cover; flex:none}
 .related-card span{display:flex; align-items:center; gap:8px; font-weight:700; font-family:var(--font-display); font-size:1.05rem}
 .related-card svg{width:16px; height:16px; color:var(--verde)}
+
+/* ---------- Cuidado de la piel ---------- */
+.cuidado{background:var(--crema-alt)}
+.care-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px}
+.care-card{display:flex; flex-direction:column; background:#fff; border-radius:28px; overflow:hidden; box-shadow:var(--sombra)}
+.care-card__media{position:relative; display:flex; align-items:center; justify-content:center; background:linear-gradient(160deg,var(--verde-claro),var(--crema-alt)); aspect-ratio:5/4; overflow:hidden}
+.care-card__media img{width:100%; height:100%; object-fit:cover; object-position:center 25%; transition:transform .5s ease}
+.care-card:hover .care-card__media img{transform:scale(1.04)}
+.care-card__media .badge{position:absolute; top:16px; left:16px; z-index:2}
+.care-card__body{padding:28px 30px 32px; display:flex; flex-direction:column; flex:1}
+.care-card__body h3{font-size:1.6rem; margin:.15em 0 .3em}
+.care-card__body p{color:var(--tinta-suave); margin:0 0 14px}
+.care-card__list{list-style:none; margin:0 0 22px; padding:0; display:grid; gap:8px; font-size:.95rem}
+.care-card__list li{display:flex; gap:10px; align-items:flex-start}
+.care-card__list svg{width:18px; height:18px; flex:none; margin-top:3px; color:var(--verde)}
+.care-card__actions{display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-top:auto}
+@media (max-width:860px){.care-grid{grid-template-columns:1fr}}
+@media (max-width:560px){.care-card__body{padding:22px 22px 26px}.care-card__actions .btn{width:100%; justify-content:center}}
 
 /* ---------- Ajustes móviles ---------- */
 @media (max-width:560px){

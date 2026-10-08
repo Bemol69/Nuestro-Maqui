@@ -1,0 +1,37 @@
+{
+  "eyebrow": "Cuidado de la piel",
+  "banner_bg": "img/gel-aloe.jpg",
+  "lead": "Body gel Odeon Ice con aloe vera: una textura fresca y ligera para después de la ducha o los días de calor. Sin parabenos ni siliconas, apto para todo tipo de piel. Envase de 300 ml.",
+  "benefits_titulo": "Por qué elegir el gel de aloe vera",
+  "benefits": [
+    {
+      "titulo": "Sensación refrescante.",
+      "texto": "Textura de gel ligera que se siente fresca al aplicarla."
+    },
+    {
+      "titulo": "Con aloe vera.",
+      "texto": "Ingrediente muy usado en cosmética por su textura suave y ligera."
+    },
+    {
+      "titulo": "Sin parabenos ni siliconas.",
+      "texto": "Así lo declara el envase del fabricante."
+    },
+    {
+      "titulo": "Para todo tipo de piel.",
+      "texto": "Se aplica las veces que quieras, especialmente después de una ducha."
+    },
+    {
+      "titulo": "Ideal para piernas y pies.",
+      "texto": "Un alivio fresco para piernas y pies cansados o con sensación de calor."
+    }
+  ],
+  "research_titulo": "Qué sabemos del aloe vera",
+  "research_parrafo": "El gel de aloe vera se extrae del interior de la hoja y está formado en su mayor parte por agua, junto con polisacáridos. Es uno de los ingredientes vegetales más usados en cosmética por su textura liviana y su sensación de frescura. Los estudios sobre su efecto en la hidratación de la piel son pocos y de resultados variados, por lo que lo ofrecemos como un producto de cuidado cosmético y de sensación refrescante.",
+  "research_caveat": "Este gel es un producto cosmético, no un medicamento: no trata ni previene enfermedades ni reemplaza indicación médica. Si tienes la piel sensible o lesionada, prueba primero en una zona pequeña y suspende su uso si notas molestias.",
+  "research_link_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4078333/",
+  "research_link_texto": "Ver un estudio sobre aloe y piel (PMC)",
+  "related": [
+    "crema-lanolina",
+    "polen-de-abeja"
+  ]
+}

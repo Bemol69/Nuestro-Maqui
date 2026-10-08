@@ -1,0 +1,33 @@
+{
+  "eyebrow": "Cuidado de la piel",
+  "banner_bg": "img/crema-lanolina.jpg",
+  "lead": "Crema Max-Belle con lanolina, la cera natural que se obtiene de la lana de oveja y que se usa desde hace décadas en el cuidado de pieles resecas. Pote de 125 ml.",
+  "benefits_titulo": "Por qué elegir la crema de lanolina",
+  "benefits": [
+    {
+      "titulo": "Hidrata y suaviza.",
+      "texto": "Fórmula pensada para pieles resecas, que deja la piel más suave al tacto."
+    },
+    {
+      "titulo": "Con lanolina.",
+      "texto": "Un emoliente clásico: ayuda a retener la humedad natural de la piel."
+    },
+    {
+      "titulo": "Uso diario.",
+      "texto": "Se aplica dos veces al día, después de la ducha y antes de acostarse."
+    },
+    {
+      "titulo": "Pote de 125 ml.",
+      "texto": "Formato práctico, fácil de llevar y de aplicar."
+    }
+  ],
+  "research_titulo": "Qué sabemos de la lanolina",
+  "research_parrafo": "La lanolina es una cera que producen las ovejas para proteger su lana, y su composición se parece a la de los lípidos de la propia piel humana. Por eso actúa como emoliente y oclusivo: suaviza y ayuda a frenar la pérdida de agua desde la superficie de la piel, sin bloquearla por completo. Es uno de los ingredientes más antiguos de la cosmética para pieles secas.",
+  "research_caveat": "La lanolina es un cosmético hidratante, no un medicamento ni un tratamiento. La evidencia clínica sobre su efecto en lesiones específicas es limitada, y una pequeña proporción de personas es alérgica a ella. Si tienes piel sensible, dermatitis o alergia a la lana, prueba primero en una zona pequeña y consulta a tu médico.",
+  "research_link_url": "https://pubmed.ncbi.nlm.nih.gov/36917502/",
+  "research_link_texto": "Leer más sobre la lanolina (PubMed)",
+  "related": [
+    "gel-aloe-vera",
+    "maqui-deshidratado"
+  ]
+}

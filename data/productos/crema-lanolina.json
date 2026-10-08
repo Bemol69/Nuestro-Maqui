@@ -1,0 +1,20 @@
+{
+  "nombre": "Crema de lanolina Max-Belle",
+  "categoria": "cuidado",
+  "resumen": "Crema hidratante con lanolina, la cera natural de la lana de oveja, para pieles resecas.",
+  "formatos": [
+    "125 ml"
+  ],
+  "foto": "img/producto-crema-lanolina.webp",
+  "foto_cutout": "",
+  "beneficios": [
+    "Hidrata y suaviza la piel",
+    "Con lanolina, emoliente natural de la lana de oveja",
+    "Pensada para pieles resecas",
+    "Se aplica después de la ducha y antes de acostarse"
+  ],
+  "etiqueta": "Nuevo",
+  "agotado": false,
+  "visible": true,
+  "orden": 7
+}
